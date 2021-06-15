@@ -4,24 +4,24 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Minimal Book Example</title>
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <title>AgroR</title>
+  <meta name="description" content="AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Minimal Book Example" />
+  <meta property="og:title" content="AgroR" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Minimal Book Example" />
+  <meta name="twitter:title" content="AgroR" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
   
 
-<meta name="author" content="Yihui Xie" />
+<meta name="author" content="Gabriel Danilo Shimizu" />
 
 
 <meta name="date" content="2021-06-15" />
@@ -119,28 +119,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -156,19 +134,71 @@ div.csl-indent {
 
 <ul class="summary">
 <li><a href="./">Introdução ao pacote AgroR</a></li>
-<center><img src="https://raw.githubusercontent.com/cran/AgroR/master/man/figures/logo.png" width="120" height="80" ></center>
+<center><img src="https://raw.githubusercontent.com/cran/AgroR/master/man/figures/logo.png" width="120" height="140" ></center>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
-<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
-<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
-<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
-<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#descrições-gerais"><i class="fa fa-check"></i><b>1.1</b> Descrições gerais</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#lista-de-funções"><i class="fa fa-check"></i><b>1.2</b> Lista de funções</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#conjunto-de-dados"><i class="fa fa-check"></i><b>1.2.1</b> Conjunto de dados</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#funções-para-análise-exploratória-dos-dados"><i class="fa fa-check"></i><b>1.2.2</b> Funções para análise exploratória dos dados</a></li>
+<li class="chapter" data-level="1.2.3" data-path="index.html"><a href="index.html#funções-de-análise"><i class="fa fa-check"></i><b>1.2.3</b> Funções de análise</a></li>
+<li class="chapter" data-level="1.2.4" data-path="index.html"><a href="index.html#gráficos"><i class="fa fa-check"></i><b>1.2.4</b> Gráficos</a></li>
+<li class="chapter" data-level="1.2.5" data-path="index.html"><a href="index.html#funções-úteis"><i class="fa fa-check"></i><b>1.2.5</b> Funções úteis</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introdução</a></li>
+<li class="chapter" data-level="3" data-path="análise-descritiva.html"><a href="análise-descritiva.html"><i class="fa fa-check"></i><b>3</b> Análise descritiva</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="análise-descritiva.html"><a href="análise-descritiva.html#um-fator"><i class="fa fa-check"></i><b>3.1</b> Um fator</a></li>
+<li class="chapter" data-level="3.2" data-path="análise-descritiva.html"><a href="análise-descritiva.html#dois-fatores"><i class="fa fa-check"></i><b>3.2</b> Dois fatores</a></li>
+<li class="chapter" data-level="3.3" data-path="análise-descritiva.html"><a href="análise-descritiva.html#três-fatores"><i class="fa fa-check"></i><b>3.3</b> Três fatores</a></li>
+<li class="chapter" data-level="3.4" data-path="análise-descritiva.html"><a href="análise-descritiva.html#dispvar"><i class="fa fa-check"></i><b>3.4</b> dispvar</a></li>
+<li class="chapter" data-level="3.5" data-path="análise-descritiva.html"><a href="análise-descritiva.html#tabledesc"><i class="fa fa-check"></i><b>3.5</b> tabledesc</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="delineamentos-simples.html"><a href="delineamentos-simples.html"><i class="fa fa-check"></i><b>4</b> Delineamentos simples</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="delineamentos-simples.html"><a href="delineamentos-simples.html#delineamento-inteiramente-casualizado"><i class="fa fa-check"></i><b>4.1</b> Delineamento inteiramente casualizado</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="delineamentos-simples.html"><a href="delineamentos-simples.html#default"><i class="fa fa-check"></i><b>4.1.1</b> default</a></li>
+<li class="chapter" data-level="4.1.2" data-path="delineamentos-simples.html"><a href="delineamentos-simples.html#alterando-teste-de-médias"><i class="fa fa-check"></i><b>4.1.2</b> Alterando teste de médias</a></li>
+<li class="chapter" data-level="4.1.3" data-path="delineamentos-simples.html"><a href="delineamentos-simples.html#alterando-para-teste-não-paramétrico-de-kruskal-wallis"><i class="fa fa-check"></i><b>4.1.3</b> Alterando para teste não-paramétrico de Kruskal-Wallis</a></li>
+<li class="chapter" data-level="4.1.4" data-path="delineamentos-simples.html"><a href="delineamentos-simples.html#transformando-dados"><i class="fa fa-check"></i><b>4.1.4</b> Transformando dados</a></li>
+<li class="chapter" data-level="4.1.5" data-path="delineamentos-simples.html"><a href="delineamentos-simples.html#alterando-parâmetros-gráficos"><i class="fa fa-check"></i><b>4.1.5</b> Alterando parâmetros gráficos</a></li>
+<li class="chapter" data-level="4.1.6" data-path="delineamentos-simples.html"><a href="delineamentos-simples.html#para-fator-quantitativo"><i class="fa fa-check"></i><b>4.1.6</b> Para fator quantitativo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="delineamentos-simples.html"><a href="delineamentos-simples.html#delineamento-em-blocos-casualizados"><i class="fa fa-check"></i><b>4.2</b> Delineamento em blocos casualizados</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="delineamentos-simples.html"><a href="delineamentos-simples.html#teste-de-friedman"><i class="fa fa-check"></i><b>4.2.1</b> Teste de Friedman</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="delineamentos-simples.html"><a href="delineamentos-simples.html#delineamento-em-quadrado-latino"><i class="fa fa-check"></i><b>4.3</b> Delineamento em quadrado latino</a></li>
+<li class="chapter" data-level="4.4" data-path="delineamentos-simples.html"><a href="delineamentos-simples.html#dic-e-dbc-por-glm"><i class="fa fa-check"></i><b>4.4</b> DIC e DBC por glm</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="dict-dbct-e-dqlt.html"><a href="dict-dbct-e-dqlt.html"><i class="fa fa-check"></i><b>5</b> DICT, DBCT e DQLT</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="dict-dbct-e-dqlt.html"><a href="dict-dbct-e-dqlt.html#dict"><i class="fa fa-check"></i><b>5.1</b> DICT</a></li>
+<li class="chapter" data-level="5.2" data-path="dict-dbct-e-dqlt.html"><a href="dict-dbct-e-dqlt.html#dbct"><i class="fa fa-check"></i><b>5.2</b> DBCT</a></li>
+<li class="chapter" data-level="5.3" data-path="dict-dbct-e-dqlt.html"><a href="dict-dbct-e-dqlt.html#dqlt"><i class="fa fa-check"></i><b>5.3</b> DQLT</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html"><i class="fa fa-check"></i><b>6</b> Esquema fatoria duplo</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat2dic"><i class="fa fa-check"></i><b>6.1</b> FAT2DIC</a></li>
+<li class="chapter" data-level="6.2" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat2dbc"><i class="fa fa-check"></i><b>6.2</b> FAT2DBC</a></li>
+<li class="chapter" data-level="6.3" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat2dic.ad"><i class="fa fa-check"></i><b>6.3</b> FAT2DIC.ad</a></li>
+<li class="chapter" data-level="6.4" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat2dbc.ad"><i class="fa fa-check"></i><b>6.4</b> FAT2DBC.ad</a></li>
+<li class="chapter" data-level="6.5" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat2dic.art"><i class="fa fa-check"></i><b>6.5</b> FAT2DIC.art</a></li>
+<li class="chapter" data-level="6.6" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat2dbc.art"><i class="fa fa-check"></i><b>6.6</b> FAT2DBC.art</a></li>
+<li class="chapter" data-level="6.7" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat3dic"><i class="fa fa-check"></i><b>6.7</b> FAT3DIC</a></li>
+<li class="chapter" data-level="6.8" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat3dbc"><i class="fa fa-check"></i><b>6.8</b> FAT3DBC</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="split-plot-and-split-splitplot.html"><a href="split-plot-and-split-splitplot.html"><i class="fa fa-check"></i><b>7</b> Split-plot and split-splitplot</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="split-plot-and-split-splitplot.html"><a href="split-plot-and-split-splitplot.html#psubdic"><i class="fa fa-check"></i><b>7.1</b> PSUBDIC</a></li>
+<li class="chapter" data-level="7.2" data-path="split-plot-and-split-splitplot.html"><a href="split-plot-and-split-splitplot.html#psubdbc"><i class="fa fa-check"></i><b>7.2</b> PSUBDBC</a></li>
+<li class="chapter" data-level="7.3" data-path="split-plot-and-split-splitplot.html"><a href="split-plot-and-split-splitplot.html#psubsubdbc"><i class="fa fa-check"></i><b>7.3</b> PSUBSUBDBC</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
@@ -179,7 +209,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AgroR</a>
           </h1>
         </div>
 
@@ -188,20 +218,163 @@ div.csl-indent {
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">A Minimal Book Example</h1>
-<p class="author"><em>Yihui Xie</em></p>
+<h1 class="title">AgroR</h1>
+<h2 class="subtitle"><em>Experimental Statistics and Graphics for Agricultural Sciences</em></h2>
+<p class="author"><em>Gabriel Danilo Shimizu</em></p>
 <p class="date" style="margin-top: 1.5em;"><em>2021-06-15</em></p>
 </div>
-<div id="prerequisites" class="section level1" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
-<p>This is a <em>sample</em> book written in <strong>Markdown</strong>. You can use anything that Pandoc’s Markdown supports, e.g., a math equation <span class="math inline">\(a^2 + b^2 = c^2\)</span>.</p>
-<p>The <strong>bookdown</strong> package can be installed from CRAN or Github:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)</span>
-<span id="cb1-2"><a href="index.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or the development version</span></span>
-<span id="cb1-3"><a href="index.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github(&quot;rstudio/bookdown&quot;)</span></span></code></pre></div>
-<p>Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading <code>#</code>.</p>
-<p>To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.org/tinytex/" class="uri">https://yihui.org/tinytex/</a>.</p>
+<div id="introdução" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Introdução</h1>
+<p>Realiza a análise de delineamentos experimentais inteiramente casualizados (DIC), blocos casualizados (DIC) e quadrado latino (DQL), experimentos em esquema fatorial duplo e triplo (em DIC e DBC), experimentos em esquema de parcela subdividida (em DIC e DBC), parcela subsubdividida em DBC, análise conjunta de experimentos em DIC e DBC, análise de regressão linear e logístico, teste para duas amostras. O pacote realiza análise de variância, suposições ANOVA e teste de comparação múltipla de médias ou regressão, segundo Pimentel-Gomes (2009, ISBN: 978-85-7133-055-9), teste não paramétrico (Conover, 1999, ISBN: 0471160687), teste para duas amostras, análise conjunta de experimentos de acordo com Ferreira (2018, ISBN: 978-85-7269-566-4), Anova de ranks alinhadas (Wobbrock, JO, Findlater, L., Gergle, D., &amp; Higgins , JJ (2011), &lt;doi: 10.1145 / 1978942.1978963&gt;) e modelo linear generalizado (glm) para binomial e família Poisson em DIC e DBC (Carvalho, FJ (2019), &lt;doi: 10.14393 / ufu.te.2019.1244&gt;) . Também pode ser utilizado para obter medidas descritivas e gráficos, além de correlações e gráficos criativos usados nas ciências agrárias (Agronomia, Zootecnia, Ciência dos Alimentos e áreas afins).</p>
+<div id="descrições-gerais" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Descrições gerais</h2>
+<p>Version: 1.2.0</p>
+<p>Depends: R (≥ 3.6.0)</p>
+<p>Imports: ggplot2, lmtest, nortest, ScottKnott, lme4, crayon, grid, gridExtra, stringr, Hmisc, emmeans, ARTool, multcomp, ggrepel, reshape2, MASS, cowplot, multcompView, hnp, RColorBrewer, drc</p>
+<p>Suggests: DT, knitr, rmarkdown, roxygen2</p>
+<p>Published: 2021-06-14</p>
+<p>Author: Gabriel Danilo Shimizu ORCID iD [aut, cre], Rodrigo Yudi Palhaci Marubayashi ORCID iD [aut, ctb], Leandro Simoes Azeredo Goncalves ORCID iD [aut, ctb]</p>
+<p>Maintainer: Gabriel Danilo Shimizu &lt;shimizu at uel.br&gt;</p>
+<p>License: GPL-2 | GPL-3 [expanded from: GPL (≥ 2)]</p>
+<p>NeedsCompilation: no</p>
+<p>Materials: <a href="https://cran.r-project.org/web/packages/AgroR/news/news.html">NEWS</a></p>
+<p>Reference manual: <a href="https://cran.r-project.org/web/packages/AgroR/AgroR.pdf">AgroR.pdf</a></p>
+</div>
+<div id="lista-de-funções" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Lista de funções</h2>
+<div id="conjunto-de-dados" class="section level3" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Conjunto de dados</h3>
+<ul>
+<li><code>aristolochia</code>: Germination of seeds of <em>Aristolochia</em> sp. as a function of temperature.</li>
+<li><code>cloro</code>: Sodium dichloroisocyanurate in soybean</li>
+<li><code>emerg</code>: Emergence of passion fruit seeds over time .</li>
+<li><code>enxofre</code>: Sulfur data</li>
+<li><code>laranja</code>: Orange plants under different rootstocks</li>
+<li><code>mirtilo</code>: Cutting blueberry data</li>
+<li><code>passiflora</code>: Substrate data in the production of passion fruit seedlings</li>
+<li><code>phao</code>: Osmocote in <em>Phalaenopsis</em> sp.</li>
+<li><code>pomegranate</code>: Pomegranate data</li>
+<li><code>porco</code>: Pig development and production</li>
+<li><code>sensorial</code>: Sensorial data</li>
+<li><code>simulate1</code>: Simulated data dict</li>
+<li><code>simulate2</code>: Simulated data dbct</li>
+<li><code>simulate3</code>: Simulated data dqlt</li>
+<li><code>tomate</code>: Tomato data</li>
+<li><code>weather</code>: Weather data</li>
+</ul>
+</div>
+<div id="funções-para-análise-exploratória-dos-dados" class="section level3" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Funções para análise exploratória dos dados</h3>
+<ul>
+<li><code>desc</code>: Descriptive analysis</li>
+<li><code>desc2fat</code>: Descriptive analysis (Two factors)</li>
+<li><code>desc3fat</code>: Descriptive analysis (Three factors)</li>
+<li><code>dispvar</code>: Boxplot with standardized data</li>
+<li><code>tabledesc</code>: Table descritive analysis</li>
+</ul>
+</div>
+<div id="funções-de-análise" class="section level3" number="1.2.3">
+<h3><span class="header-section-number">1.2.3</span> Funções de análise</h3>
+<p><em>Análise ara teste de duas amostras independentes ou dependentes por método paramétrico ou não-paramétrico</em></p>
+<ul>
+<li><code>test_two</code>: Test for two samples</li>
+</ul>
+<p><em>Análise de experimento simples</em></p>
+<ul>
+<li><code>DIC</code>: Completely randomized design</li>
+<li><code>DBC</code>: Randomized block design</li>
+<li><code>DQL</code>: Latin square design</li>
+</ul>
+<p><em>Análise de experimentos simples em DIC e DBC por modelo linear generalizado (Binomial ou Poisson)</em></p>
+<ul>
+<li><code>DIC.glm</code>: Completely randomized design by glm</li>
+<li><code>DBC.glm</code>: Randomized block design by glm</li>
+</ul>
+<p><em>Análise de experimentos em DIC, DBC ou DQL com múltiplas avaliações no tempo ou desconsiderando o efeito de outro fator.</em></p>
+<ul>
+<li><code>DICT</code>: Completely randomized design evaluated over time</li>
+<li><code>DBCT</code>: Randomized block design evaluated over time</li>
+<li><code>DQLT</code>: Latin square design evaluated over time</li>
+</ul>
+<p><em>Análise de grupos de experimentos em DIC e DBC</em></p>
+<ul>
+<li><code>conjdbc</code>: Joint analysis of experiments in randomized block design</li>
+<li><code>conjdic</code>: Joint analysis of experiments in completely randomized design</li>
+</ul>
+<p><em>Análise de experimentos em esquema fatorial duplo em DIC e DBC</em></p>
+<ul>
+<li><code>FAT2DIC</code>: DIC experiments in double factorial</li>
+<li><code>FAT2DBC</code>: DBC experiments in double factorial</li>
+</ul>
+<p><em>Análise de experimentos em esquema fatorial duplo em DIC ou DBC com um tratamento adicional</em></p>
+<ul>
+<li><code>FAT2DIC.ad</code>: DIC experiment in double factorial design with an additional treatment</li>
+<li><code>FAT2DBC.ad</code>: DBC experiment in double factorial design with an additional treatment</li>
+</ul>
+<p><em>Análise de experimentos em esquema fatorial duplo em DIC ou DBC por método não-parametrico de Anova de ranks alinhados.</em></p>
+<ul>
+<li><code>FAT2DIC.art</code>: Analysis of Variance of Aligned Rank Transformed Data in FAT2DIC</li>
+<li><code>FAT2DBC.art</code>: Analysis of Variance of Aligned Rank Transformed Data in FAT2DBC</li>
+</ul>
+<p><em>Análise de experimentos em DIC ou DBC em esquema fatorial com três fatores</em></p>
+<ul>
+<li><code>FAT3DIC</code>: DIC experiments in triple factorial</li>
+<li><code>FAT3DBC</code>: DBC experiments in triple factorial</li>
+</ul>
+<p><em>Esquema de parcelas subdivididas em DIC ou DBC</em></p>
+<ul>
+<li><code>PSUBDBC</code>: DBC experiments in split-plot</li>
+<li><code>PSUBDIC</code>: DIC experiments in split-plot</li>
+</ul>
+<p><em>Esquema de parcelas subsubdivididas em DBC</em></p>
+<ul>
+<li><code>PSUBSUBDBC</code>: DBC experiments in split-split-plot</li>
+</ul>
+<p><em>Teste de Dunnett para comparação de testemunha vs tratamentos</em></p>
+<ul>
+<li><code>dunnett</code>: Dunnett test</li>
+</ul>
+<p><em>Regressão logistica de 3 ou 4 parâmetros</em></p>
+<ul>
+<li><code>logistic</code>: Logistic regression</li>
+</ul>
+<p><em>Regressão polinomial até terceiro grau</em></p>
+<ul>
+<li><code>polynomial</code>: Linear regression graph</li>
+<li><code>polynomial2</code>: Linear regression graph in double factorial</li>
+<li><code>polynomial2_color</code>: Linear regression graph in double factorial with color graph</li>
+</ul>
+</div>
+<div id="gráficos" class="section level3" number="1.2.4">
+<h3><span class="header-section-number">1.2.4</span> Gráficos</h3>
+<ul>
+<li><code>barplot_positive</code>: Positive barplot</li>
+<li><code>bar_graph</code>: bar graph for one factor</li>
+<li><code>corgraph</code>: Correlogram</li>
+<li><code>cor_ic</code>: plot Pearson correlation with interval of confidence</li>
+<li><code>line_plot</code>: Line chart</li>
+<li><code>plot_cor</code>: plot correlation</li>
+<li><code>plot_interaction</code>: Interaction plot</li>
+<li><code>plot_jitter</code>: Column, box or segment chart with observations</li>
+<li><code>plot_TH</code>: Climate chart of temperature and humidity</li>
+<li><code>plot_TH1</code>: Climate chart of temperature and humidity (Model 2)</li>
+<li><code>radargraph</code>: Circular column chart</li>
+<li><code>seg_graph</code>: segment graph for one factor</li>
+<li><code>sk_graph</code>: Scott-Knott graphics</li>
+<li><code>spider_graph</code>: Spider graph for sensorial analysis</li>
+<li><code>TBARPLOT.reverse</code>: Reverse graph of DICT, DBCT and DQL output when geom=“bar”</li>
+</ul>
+</div>
+<div id="funções-úteis" class="section level3" number="1.2.5">
+<h3><span class="header-section-number">1.2.5</span> Funções úteis</h3>
+<ul>
+<li><code>sketch</code>: Experimental sketch</li>
+<li><code>aacp</code>: Area under the curve</li>
+<li><code>transf</code>: Data transformation (Box-Cox, 1964)</li>
+</ul>
 
+</div>
+</div>
 </div>
             </section>
 
@@ -260,20 +433,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

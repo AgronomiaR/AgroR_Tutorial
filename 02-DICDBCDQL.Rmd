@@ -1,3 +1,142 @@
-# Literature
+# Análise descritiva
 
-Here is a review of existing methods.
+```{r,message=FALSE}
+library(AgroR)
+```
+
+## Um fator
+
+```{r}
+data("pomegranate")
+attach(pomegranate)
+desc(trat,WL)
+```
+
+## Dois fatores
+
+```{r}
+data(cloro)
+attach(cloro)
+desc2fat(f1,f2,resp)
+```
+
+## Três fatores
+
+```{r}
+data(enxofre)
+attach(enxofre)
+desc3fat(f1, f2, f3, resp)
+```
+
+## dispvar
+
+```{r}
+data("pomegranate")
+dispvar(pomegranate[,-1])
+trat=pomegranate$trat
+dispvar(pomegranate[,-1], trat)
+```
+
+## tabledesc
+
+```{r}
+data(pomegranate)
+tabledesc(pomegranate)
+```
+
+# Delineamentos simples
+
+## Delineamento inteiramente casualizado
+
+Considere o seguinte conjunto de dados:
+
+```{r}
+rm(list=ls())
+data(pomegranate)
+attach(pomegranate)
+```
+
+### default
+
+Por *default*, o AgroR realiza a análise de variância, teste de normalidade dos erros de Shapiro-Wilk, teste de homogeneidade das variâncias de Bartlett, teste de independência dos erros de Durbin-Watson, teste de comparação múltipla de Tukey e o gráfico de colunas.
+
+```{r}
+DIC(trat, WL)
+```
+
+### Alterando teste de médias
+
+Para alterar o teste de médias, é necessário alterar o argumento `mcomp`.
+
+```{r,results='hide',fig.show='hide',message=FALSE,warning=FALSE}
+DIC(trat, WL) # tukey
+DIC(trat, WL, mcomp = "sk") # Scott-Knott
+DIC(trat, WL, mcomp = "duncan") # Duncan
+DIC(trat, WL, mcomp = "lsd") # LSD
+```
+
+### Alterando para teste não-paramétrico de Kruskal-Wallis
+
+```{r}
+DIC(trat, WL, test = "noparametric",geom="point")
+```
+
+### Transformando dados
+
+O argumento `transf` define a transformação solicitada.
+
+```{r}
+DIC(trat, WL, transf = 0)
+```
+
+### Alterando parâmetros gráficos
+
+```{r,results='hide',fig.show='hide',message=FALSE,warning=FALSE}
+DIC(trat, WL, geom="point") # tipo de gráfico
+DIC(trat, WL, ylab = "Weight loss (%)", xlab="Treatments") # nome de eixos
+```
+
+### Para fator quantitativo
+
+```{r}
+rm(list=ls())
+data("phao")
+with(phao, DIC(dose,comp,quali=FALSE,grau=2))
+```
+
+## Delineamento em blocos casualizados
+
+Os argumentos para DBC e DQL são muito similares a função DIC. A diferença está apenas na inserção do argumento `block` e da alteração do teste não-paramétrico para Friedman.
+
+```{r}
+rm(list=ls())
+data(laranja)
+with(laranja, DBC(trat, bloco, resp,angle=45,
+                  ylab = "Number of fruits/plants"))
+```
+
+### Teste de Friedman
+
+```{r}
+with(laranja, DBC(trat, bloco, resp, test="noparametric"))
+```
+
+## Delineamento em quadrado latino
+
+```{r}
+rm(list=ls())
+data(porco)
+with(porco,DQL(trat, linhas, colunas, resp))
+```
+
+## DIC e DBC por glm
+
+```{r}
+rm(list=ls())
+data("aristolochia")
+attach(aristolochia)
+resp=resp/4 # total germinated seeds
+# the value 25 is the total of seeds in the repetition
+DIC.glm(trat, cbind(resp,25-resp), glm.family="binomial")
+```
+

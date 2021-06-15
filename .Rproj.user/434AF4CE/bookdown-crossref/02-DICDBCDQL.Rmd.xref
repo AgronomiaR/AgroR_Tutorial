@@ -1,2 +1,19 @@
-h1:literature Literature
+h1:análise-descritiva Análise descritiva
+h2:um-fator Um fator
+h2:dois-fatores Dois fatores
+h2:três-fatores Três fatores
+h2:dispvar dispvar
+h2:tabledesc tabledesc
+h1:delineamentos-simples Delineamentos simples
+h2:delineamento-inteiramente-casualizado Delineamento inteiramente casualizado
+h3:default default
+h3:alterando-teste-de-médias Alterando teste de médias
+h3:alterando-para-teste-não-paramétrico-de-kruskal-wallis Alterando para teste não-paramétrico de Kruskal-Wallis
+h3:transformando-dados Transformando dados
+h3:alterando-parâmetros-gráficos Alterando parâmetros gráficos
+h3:para-fator-quantitativo Para fator quantitativo
+h2:delineamento-em-blocos-casualizados Delineamento em blocos casualizados
+h3:teste-de-friedman Teste de Friedman
+h2:delineamento-em-quadrado-latino Delineamento em quadrado latino
+h2:dic-e-dbc-por-glm DIC e DBC por glm
 

@@ -1,7 +1,63 @@
-# Applications
+# Esquema fatoria duplo
 
-Some _significant_ applications are demonstrated in this chapter.
+## FAT2DIC
 
-## Example one
+```{r}
+data(cloro)
+with(cloro,
+     FAT2DIC(f1, f2, resp, ylab="Number of nodules", legend = "Stages"))
+```
 
-## Example two
+## FAT2DBC
+
+```{r}
+data(cloro)
+with(cloro,
+     FAT2DBC(f1, f2, bloco, resp, ylab="Number of nodules", legend = "Stages"))
+```
+
+## FAT2DIC.ad
+
+```{r}
+data(cloro)
+respAd=c(268, 322, 275, 350, 320)
+with(cloro,FAT2DIC.ad(f1, f2, bloco, resp, respAd, ylab="Number of nodules", legend = "Stages"))
+```
+
+## FAT2DBC.ad
+
+```{r}
+data(cloro)
+respAd=c(268, 322, 275, 350, 320)
+with(cloro,
+     FAT2DBC.ad(f1, f2, bloco, resp, respAd, ylab="Number of nodules", legend = "Stages"))
+```
+
+## FAT2DIC.art
+
+```{r}
+data(cloro)
+with(cloro, FAT2DIC.art(f1,f2,resp))
+```
+
+## FAT2DBC.art
+
+```{r}
+data(cloro)
+with(cloro,FAT2DBC.art(f1,f2,bloco,resp))
+```
+
+## FAT3DIC
+
+```{r}
+data(enxofre)
+with(enxofre, FAT3DIC(f1, f2, f3, resp))
+```
+
+## FAT3DBC
+
+```{r}
+data(enxofre)
+with(enxofre, FAT3DBC(f1, f2, f3, bloco, resp))
+```
+

@@ -1,3 +1,23 @@
-# Methods
+# DICT, DBCT e DQLT
 
-We describe our methods in this chapter.
+## DICT
+
+```{r}
+data(simulate1)
+with(simulate1, DICT(trat, tempo, resp))
+```
+
+## DBCT
+
+```{r}
+data(simulate2)
+with(simulate2, DBCT(trat, bloco, tempo, resp))
+```
+
+## DQLT
+
+```{r}
+data(simulate3)
+with(simulate3, DQLT(trat, linhas, colunas, tempo, resp))
+```
+

@@ -1,3 +1,23 @@
-# Final Words
+# Split-plot and split-splitplot
 
-We have finished a nice book.
+## PSUBDIC
+
+```{r}
+data(tomate)
+with(tomate, PSUBDIC(parc, subp, bloco, resp))
+```
+
+## PSUBDBC
+
+```{r}
+data(tomate)
+with(tomate, PSUBDBC(parc, subp, bloco, resp))
+```
+
+## PSUBSUBDBC
+
+```{r}
+data(enxofre)
+with(enxofre, PSUBSUBDBC(f1, f2, f3, bloco, resp))
+```
+
