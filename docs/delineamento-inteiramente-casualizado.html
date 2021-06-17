@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 4 Delineamento Inteiramente Casualizado | AgroR</title>
+  <meta name="description" content="Capítulo 4 Delineamento Inteiramente Casualizado | AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 4 Delineamento Inteiramente Casualizado | AgroR" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Capítulo 4 Delineamento Inteiramente Casualizado | AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 4 Delineamento Inteiramente Casualizado | AgroR" />
+  
+  <meta name="twitter:description" content="Capítulo 4 Delineamento Inteiramente Casualizado | AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
+  
+
+<meta name="author" content="Gabriel Danilo Shimizu" />
+
+
+<meta name="date" content="2021-06-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="análise-descritiva.html"/>
+<link rel="next" href="delineamento-em-blocos-casualizados.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introdução ao pacote AgroR</a></li>
+<center><img src="https://raw.githubusercontent.com/cran/AgroR/master/man/figures/logo.png" width="120" height="140" ></center>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#descrições-gerais"><i class="fa fa-check"></i><b>1.1</b> Descrições gerais</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#lista-de-funções"><i class="fa fa-check"></i><b>1.2</b> Lista de funções</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#conjunto-de-dados"><i class="fa fa-check"></i><b>1.2.1</b> Conjunto de dados</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#funções-para-análise-exploratória-dos-dados"><i class="fa fa-check"></i><b>1.2.2</b> Funções para análise exploratória dos dados</a></li>
+<li class="chapter" data-level="1.2.3" data-path="index.html"><a href="index.html#funções-de-análise"><i class="fa fa-check"></i><b>1.2.3</b> Funções de análise</a></li>
+<li class="chapter" data-level="1.2.4" data-path="index.html"><a href="index.html#gráficos"><i class="fa fa-check"></i><b>1.2.4</b> Gráficos</a></li>
+<li class="chapter" data-level="1.2.5" data-path="index.html"><a href="index.html#funções-úteis"><i class="fa fa-check"></i><b>1.2.5</b> Funções úteis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introdução</a></li>
+<li class="chapter" data-level="3" data-path="análise-descritiva.html"><a href="análise-descritiva.html"><i class="fa fa-check"></i><b>3</b> Análise descritiva</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="análise-descritiva.html"><a href="análise-descritiva.html#um-fator"><i class="fa fa-check"></i><b>3.1</b> Um fator</a></li>
+<li class="chapter" data-level="3.2" data-path="análise-descritiva.html"><a href="análise-descritiva.html#dois-fatores"><i class="fa fa-check"></i><b>3.2</b> Dois fatores</a></li>
+<li class="chapter" data-level="3.3" data-path="análise-descritiva.html"><a href="análise-descritiva.html#três-fatores"><i class="fa fa-check"></i><b>3.3</b> Três fatores</a></li>
+<li class="chapter" data-level="3.4" data-path="análise-descritiva.html"><a href="análise-descritiva.html#dispvar"><i class="fa fa-check"></i><b>3.4</b> dispvar</a></li>
+<li class="chapter" data-level="3.5" data-path="análise-descritiva.html"><a href="análise-descritiva.html#tabledesc"><i class="fa fa-check"></i><b>3.5</b> tabledesc</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html"><i class="fa fa-check"></i><b>4</b> Delineamento Inteiramente Casualizado</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html#teoria"><i class="fa fa-check"></i><b>4.1</b> Teoria</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html#vantagens"><i class="fa fa-check"></i><b>4.1.1</b> Vantagens</a></li>
+<li class="chapter" data-level="4.1.2" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html#desvantagens"><i class="fa fa-check"></i><b>4.1.2</b> Desvantagens</a></li>
+<li class="chapter" data-level="4.1.3" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html#modelo-matemático-para-dic"><i class="fa fa-check"></i><b>4.1.3</b> Modelo matemático para DIC</a></li>
+<li class="chapter" data-level="4.1.4" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html#hipóteses-e-modelo"><i class="fa fa-check"></i><b>4.1.4</b> Hipóteses e Modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html#dic"><i class="fa fa-check"></i><b>4.2</b> DIC</a></li>
+<li class="chapter" data-level="4.3" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html#transformando-dados"><i class="fa fa-check"></i><b>4.3</b> Transformando dados</a></li>
+<li class="chapter" data-level="4.4" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html#kruskal-wallis"><i class="fa fa-check"></i><b>4.4</b> Kruskal-Wallis</a></li>
+<li class="chapter" data-level="4.5" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html#fator-quantitativo"><i class="fa fa-check"></i><b>4.5</b> Fator Quantitativo</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="delineamento-em-blocos-casualizados.html"><a href="delineamento-em-blocos-casualizados.html"><i class="fa fa-check"></i><b>5</b> Delineamento em blocos casualizados</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="delineamento-em-blocos-casualizados.html"><a href="delineamento-em-blocos-casualizados.html#teoria-1"><i class="fa fa-check"></i><b>5.1</b> Teoria</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="delineamento-em-blocos-casualizados.html"><a href="delineamento-em-blocos-casualizados.html#vantagens-1"><i class="fa fa-check"></i><b>5.1.1</b> Vantagens</a></li>
+<li class="chapter" data-level="5.1.2" data-path="delineamento-em-blocos-casualizados.html"><a href="delineamento-em-blocos-casualizados.html#desvantagens-1"><i class="fa fa-check"></i><b>5.1.2</b> Desvantagens</a></li>
+<li class="chapter" data-level="5.1.3" data-path="delineamento-em-blocos-casualizados.html"><a href="delineamento-em-blocos-casualizados.html#modelo-matemático"><i class="fa fa-check"></i><b>5.1.3</b> Modelo matemático</a></li>
+<li class="chapter" data-level="5.1.4" data-path="delineamento-em-blocos-casualizados.html"><a href="delineamento-em-blocos-casualizados.html#hipóteses-e-modelo-1"><i class="fa fa-check"></i><b>5.1.4</b> Hipóteses e Modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="delineamento-em-blocos-casualizados.html"><a href="delineamento-em-blocos-casualizados.html#teste-de-friedman"><i class="fa fa-check"></i><b>5.2</b> Teste de Friedman</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="delineamento-em-quadrado-latino.html"><a href="delineamento-em-quadrado-latino.html"><i class="fa fa-check"></i><b>6</b> Delineamento em quadrado latino</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="delineamento-em-quadrado-latino.html"><a href="delineamento-em-quadrado-latino.html#teoria-2"><i class="fa fa-check"></i><b>6.1</b> Teoria</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="delineamento-em-quadrado-latino.html"><a href="delineamento-em-quadrado-latino.html#modelo-matemático-1"><i class="fa fa-check"></i><b>6.1.1</b> Modelo matemático</a></li>
+<li class="chapter" data-level="6.1.2" data-path="delineamento-em-quadrado-latino.html"><a href="delineamento-em-quadrado-latino.html#hipóteses-e-modelo-2"><i class="fa fa-check"></i><b>6.1.2</b> Hipóteses e Modelo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="dic-e-dbc-por-glm.html"><a href="dic-e-dbc-por-glm.html"><i class="fa fa-check"></i><b>7</b> DIC e DBC por glm</a></li>
+<li class="chapter" data-level="8" data-path="dict-dbct-e-dqlt.html"><a href="dict-dbct-e-dqlt.html"><i class="fa fa-check"></i><b>8</b> DICT, DBCT e DQLT</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="dict-dbct-e-dqlt.html"><a href="dict-dbct-e-dqlt.html#dict"><i class="fa fa-check"></i><b>8.1</b> DICT</a></li>
+<li class="chapter" data-level="8.2" data-path="dict-dbct-e-dqlt.html"><a href="dict-dbct-e-dqlt.html#dbct"><i class="fa fa-check"></i><b>8.2</b> DBCT</a></li>
+<li class="chapter" data-level="8.3" data-path="dict-dbct-e-dqlt.html"><a href="dict-dbct-e-dqlt.html#dqlt"><i class="fa fa-check"></i><b>8.3</b> DQLT</a></li>
+<li class="chapter" data-level="8.4" data-path="dict-dbct-e-dqlt.html"><a href="dict-dbct-e-dqlt.html#tbarplot.reverse"><i class="fa fa-check"></i><b>8.4</b> TBARPLOT.reverse</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html"><i class="fa fa-check"></i><b>9</b> Esquema fatoria duplo</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#teoria-3"><i class="fa fa-check"></i><b>9.1</b> Teoria</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#tipos-de-efeitos-avaliados"><i class="fa fa-check"></i><b>9.1.1</b> Tipos de efeitos avaliados</a></li>
+<li class="chapter" data-level="9.1.2" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#vantagens-2"><i class="fa fa-check"></i><b>9.1.2</b> Vantagens</a></li>
+<li class="chapter" data-level="9.1.3" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#desvantagens-2"><i class="fa fa-check"></i><b>9.1.3</b> Desvantagens</a></li>
+<li class="chapter" data-level="9.1.4" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#modelo-estatístico"><i class="fa fa-check"></i><b>9.1.4</b> Modelo estatístico</a></li>
+<li class="chapter" data-level="9.1.5" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#hipóteses-e-quadro-da-análise-de-variância"><i class="fa fa-check"></i><b>9.1.5</b> Hipóteses e quadro da análise de variância</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat2dic"><i class="fa fa-check"></i><b>9.2</b> FAT2DIC</a></li>
+<li class="chapter" data-level="9.3" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat2dbc"><i class="fa fa-check"></i><b>9.3</b> FAT2DBC</a></li>
+<li class="chapter" data-level="9.4" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat2dic.ad"><i class="fa fa-check"></i><b>9.4</b> FAT2DIC.ad</a></li>
+<li class="chapter" data-level="9.5" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat2dbc.ad"><i class="fa fa-check"></i><b>9.5</b> FAT2DBC.ad</a></li>
+<li class="chapter" data-level="9.6" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat2dic.art"><i class="fa fa-check"></i><b>9.6</b> FAT2DIC.art</a></li>
+<li class="chapter" data-level="9.7" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat2dbc.art"><i class="fa fa-check"></i><b>9.7</b> FAT2DBC.art</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="fatorial-triplo.html"><a href="fatorial-triplo.html"><i class="fa fa-check"></i><b>10</b> Fatorial triplo</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="fatorial-triplo.html"><a href="fatorial-triplo.html#teoria-4"><i class="fa fa-check"></i><b>10.1</b> Teoria</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="fatorial-triplo.html"><a href="fatorial-triplo.html#tipos-de-efeitos-avaliados-1"><i class="fa fa-check"></i><b>10.1.1</b> Tipos de efeitos avaliados</a></li>
+<li class="chapter" data-level="10.1.2" data-path="fatorial-triplo.html"><a href="fatorial-triplo.html#vantagens-3"><i class="fa fa-check"></i><b>10.1.2</b> Vantagens</a></li>
+<li class="chapter" data-level="10.1.3" data-path="fatorial-triplo.html"><a href="fatorial-triplo.html#desvantagens-3"><i class="fa fa-check"></i><b>10.1.3</b> Desvantagens</a></li>
+<li class="chapter" data-level="10.1.4" data-path="fatorial-triplo.html"><a href="fatorial-triplo.html#modelo-estatístico-1"><i class="fa fa-check"></i><b>10.1.4</b> Modelo estatístico</a></li>
+<li class="chapter" data-level="10.1.5" data-path="fatorial-triplo.html"><a href="fatorial-triplo.html#hipóteses-e-modelo-3"><i class="fa fa-check"></i><b>10.1.5</b> Hipóteses e modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="fatorial-triplo.html"><a href="fatorial-triplo.html#fat3dic"><i class="fa fa-check"></i><b>10.2</b> FAT3DIC</a></li>
+<li class="chapter" data-level="10.3" data-path="fatorial-triplo.html"><a href="fatorial-triplo.html#fat3dbc"><i class="fa fa-check"></i><b>10.3</b> FAT3DBC</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="parcela-subdividida.html"><a href="parcela-subdividida.html"><i class="fa fa-check"></i><b>11</b> Parcela subdividida</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="parcela-subdividida.html"><a href="parcela-subdividida.html#teoria-5"><i class="fa fa-check"></i><b>11.1</b> Teoria</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="parcela-subdividida.html"><a href="parcela-subdividida.html#vantagens-4"><i class="fa fa-check"></i><b>11.1.1</b> Vantagens</a></li>
+<li class="chapter" data-level="11.1.2" data-path="parcela-subdividida.html"><a href="parcela-subdividida.html#desvantagens-4"><i class="fa fa-check"></i><b>11.1.2</b> Desvantagens</a></li>
+<li class="chapter" data-level="11.1.3" data-path="parcela-subdividida.html"><a href="parcela-subdividida.html#modelo-estatístico-2"><i class="fa fa-check"></i><b>11.1.3</b> Modelo estatístico</a></li>
+<li class="chapter" data-level="11.1.4" data-path="parcela-subdividida.html"><a href="parcela-subdividida.html#hipóteses-e-modelo-4"><i class="fa fa-check"></i><b>11.1.4</b> Hipóteses e modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="parcela-subdividida.html"><a href="parcela-subdividida.html#psubdic"><i class="fa fa-check"></i><b>11.2</b> PSUBDIC</a></li>
+<li class="chapter" data-level="11.3" data-path="parcela-subdividida.html"><a href="parcela-subdividida.html#psubdbc"><i class="fa fa-check"></i><b>11.3</b> PSUBDBC</a></li>
+<li class="chapter" data-level="11.4" data-path="parcela-subdividida.html"><a href="parcela-subdividida.html#psubsubdbc"><i class="fa fa-check"></i><b>11.4</b> PSUBSUBDBC</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="análise-conjunta.html"><a href="análise-conjunta.html"><i class="fa fa-check"></i><b>12</b> Análise conjunta</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="análise-conjunta.html"><a href="análise-conjunta.html#teoria-6"><i class="fa fa-check"></i><b>12.1</b> Teoria</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AgroR</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="delineamento-inteiramente-casualizado" class="section level1" number="4">
+<h1><span class="header-section-number">Capítulo 4</span> Delineamento Inteiramente Casualizado</h1>
+<hr />
+<p><br><br></p>
+<hr />
+<div id="teoria" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Teoria</h2>
+<hr />
+<p>O Delineamento inteiramente casualizado é considerado o delineamento mais simples dentro da estatistica. No DIC as unidades experimentais são destinadas a cada tratamento de uma forma inteiramente casual (sorteio). Os experimentos formulados com este delineamento são denominados “experimentos inteiramente ao acaso.”</p>
+<p><br></p>
+<p>O DIC apresenta as seguintes características:</p>
+<ul>
+<li>Considera apenas os princípios de repetição e casulização;</li>
+<li>Os tratamentos são divididos em parcelas de forma inteiramente casual;</li>
+<li>Exige que o material experimental seja semelhante e que as condições de estudo sejam completamentes uniformes;</li>
+<li>Os aspectos que devem ser considerados na semelhança entre as U.E. são aqueles que interferem nas respostas das mesmas aos tratamentos;</li>
+<li>Ele geralmente é mais utilizado em experimentos nos quais as condições experimentais podem ser bastante controladas (por exemplo em laboratórios);</li>
+</ul>
+<p><br></p>
+<hr />
+<div id="vantagens" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Vantagens</h3>
+<hr />
+<ul>
+<li><p>Delineamento flexível - número de tratamentos e repetições depende apenas da quantidade de parcelas disponíveis</p></li>
+<li><p>O número de repetições pode diferir de um tratamento para o outro (experimento não balanceado)</p></li>
+<li><p>A análise estatística é simples</p></li>
+<li><p>O número de G.L. resíduo é o maior possível</p></li>
+</ul>
+<p><br></p>
+<hr />
+</div>
+<div id="desvantagens" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Desvantagens</h3>
+<hr />
+<ul>
+<li><p>Exige homogeneidade das condições ambientais</p></li>
+<li><p>Pode estimar uma variância residual muito alta</p></li>
+</ul>
+<hr />
+</div>
+<div id="modelo-matemático-para-dic" class="section level3" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Modelo matemático para DIC</h3>
+<hr />
+<p><span class="math display">\[\begin{eqnarray}
+y_{ji}=\mu+\tau_i+\varepsilon_{ij}
+\end{eqnarray}\]</span></p>
+<p><span class="math inline">\(y_{ji}\)</span>: é a observação referente ao tratamento i na repetição j;</p>
+<p><span class="math inline">\(\mu\)</span>: é a média geral (ou constante comum a todas as observações);</p>
+<p><span class="math inline">\(\tau_i\)</span>: é o efeito de tratamento, com <span class="math inline">\(i = 1, 2, . . . , I\)</span>;</p>
+<p><span class="math inline">\(\varepsilon_{ij}\)</span>: é o erro experimental, tal que <span class="math inline">\(\varepsilon_{ij}\)</span>~N(0; <span class="math inline">\(\sigma^2\)</span>).</p>
+<hr />
+</div>
+<div id="hipóteses-e-modelo" class="section level3" number="4.1.4">
+<h3><span class="header-section-number">4.1.4</span> Hipóteses e Modelo</h3>
+<hr />
+<p><span class="math display">\[\begin{eqnarray*}
+\left\{
+\begin{array}{ll}
+H_0: &amp; \mu_1 = \mu_2 =\mu_i\\[.2cm]
+H_1: &amp; \mu_i \neq \mu_i&#39; \qquad i \neq i&#39;.
+\end{array}
+\right.
+\end{eqnarray*}\]</span></p>
+<table>
+<colgroup>
+<col width="11%" />
+<col width="7%" />
+<col width="10%" />
+<col width="20%" />
+<col width="20%" />
+<col width="29%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">CV</th>
+<th align="center">G.L.</th>
+<th align="center">S.Q.</th>
+<th align="center">Q.M.</th>
+<th align="center">Fcalc</th>
+<th align="left">Ftab</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">Tratamentos</td>
+<td align="center"><span class="math inline">\(a - 1\)</span></td>
+<td align="center"><span class="math inline">\(SQ_{Trat}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{SQ_{Trat}}{a-1}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{QMTrat}{QMRes}\)</span></td>
+<td align="left"><span class="math inline">\(F(\alpha;GL_{Trat} ;GL_{Res})\)</span></td>
+</tr>
+<tr class="even">
+<td align="right">resíduo</td>
+<td align="center"><span class="math inline">\(a(b-1)\)</span></td>
+<td align="center"><span class="math inline">\(SQ_{Res}\)</span></td>
+<td align="center"><span class="math inline">\(SQRes\)</span></td>
+<td align="center">-</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="right">Total</td>
+<td align="center"><span class="math inline">\(ab-1\)</span></td>
+<td align="center"><span class="math inline">\(SQ_{Total}\)</span></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<center>
+<p><strong>Correção</strong></p>
+<p><span class="math inline">\(C = \frac{(\sum Y_{ij})^2}{ij}\)</span></p>
+<p><strong>Soma de Quadrados Total</strong></p>
+<p><span class="math inline">\(SQ_{Total}=\sum Y_{ij}^2-C\)</span></p>
+<p><strong>Soma de Quadrados Tratamento</strong></p>
+<p><span class="math inline">\(SQ_{Tratamento}=\frac{1}{J}\sum Y_{i}^2-C\)</span></p>
+<p><strong>Soma de Quadrados do resíduo</strong></p>
+<p><span class="math inline">\(SQ_{Resíduo} = SQ_{Total} - SQ_{Tratamento}\)</span></p>
+<p><strong>Quadrado Médio do Tratamento</strong></p>
+<p><span class="math inline">\(QM_{Tratamento} = \frac{SQ_{Tratamento}}{GL_{Tratamento}}\)</span></p>
+<p><strong>Quadrado Médio do Resíduo</strong></p>
+<p><span class="math inline">\(QM_{Resíduo} = \frac{SQ_{Resíduo}}{GL_{Resíduo}}\)</span></p>
+<p><strong>F calculado</strong></p>
+<p><span class="math inline">\(F_{Calculado}=\frac{QM_{Tratamento}}{QM_{Resíduo}}\)</span></p>
+</center>
+<p><br><br></p>
+</div>
+</div>
+<div id="dic" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> DIC</h2>
+<p>Considere o seguinte conjunto de dados:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="delineamento-inteiramente-casualizado.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
+<span id="cb14-2"><a href="delineamento-inteiramente-casualizado.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(pomegranate)</span></code></pre></div>
+<div id="default" class="section level4" number="4.2.0.1">
+<h4><span class="header-section-number">4.2.0.1</span> default</h4>
+<p>Por <em>default</em>, o AgroR realiza a análise de variância, teste de normalidade dos erros de Shapiro-Wilk, teste de homogeneidade das variâncias de Bartlett, teste de independência dos erros de Durbin-Watson, teste de comparação múltipla de Tukey e o gráfico de colunas.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="delineamento-inteiramente-casualizado.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(pomegranate, <span class="fu">DIC</span>(trat, WL))</span></code></pre></div>
+<pre><code>## 
+## -----------------------------------------------------------------
+## Normality of errors
+## -----------------------------------------------------------------
+##                          Method Statistic   p.value
+##  Shapiro-Wilk normality test(W) 0.9448293 0.2087967</code></pre>
+<pre><code>## As the calculated p-value is greater than the 5% significance level, hypothesis H0 is not rejected. Therefore, errors can be considered normal</code></pre>
+<pre><code>## 
+## -----------------------------------------------------------------
+## Homogeneity of Variances
+## -----------------------------------------------------------------
+##                               Method Statistic   p.value
+##  Bartlett test(Bartlett&#39;s K-squared)  8.568274 0.1275737</code></pre>
+<pre><code>## As the calculated p-value is greater than the 5% significance level,hypothesis H0 is not rejected. Therefore, the variances can be considered homogeneous</code></pre>
+<pre><code>## 
+## -----------------------------------------------------------------
+## Independence from errors
+## -----------------------------------------------------------------
+##                  Method Statistic   p.value
+##  Durbin-Watson test(DW)  2.104821 0.1924474</code></pre>
+<pre><code>## As the calculated p-value is greater than the 5% significance level, hypothesis H0 is not rejected. Therefore, errors can be considered independent</code></pre>
+<pre><code>## 
+## -----------------------------------------------------------------
+## Additional Information
+## -----------------------------------------------------------------
+## 
+## CV (%) =  10.84
+## R-squared =  0.92
+## Mean =  2.2596
+## Median =  2.225
+## Possible outliers =  No discrepant point
+## 
+## -----------------------------------------------------------------
+## Analysis of Variance
+## -----------------------------------------------------------------
+##           Df   Sum Sq    Mean.Sq  F value        Pr(F)
+## trat       5 3.692121 0.73842417 12.31191 2.723541e-05
+## Residuals 18 1.079575 0.05997639</code></pre>
+<pre><code>## As the calculated p-value, it is less than the 5% significance level.The hypothesis H0 of equality of means is rejected. Therefore, at least two treatments differ</code></pre>
+<pre><code>## 
+## 
+## -----------------------------------------------------------------
+## Multiple Comparison Test
+## -----------------------------------------------------------------
+##      resp groups
+## T5 2.6375      a
+## T4 2.6200      a
+## T3 2.6175      a
+## T6 2.1625     ab
+## T1 1.8425      b
+## T2 1.6775      b</code></pre>
+<pre><code>## </code></pre>
+<p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-8-1.png" width="672" /><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-8-2.png" width="672" /></p>
+</div>
+<div id="alterando-teste-de-médias" class="section level4" number="4.2.0.2">
+<h4><span class="header-section-number">4.2.0.2</span> Alterando teste de médias</h4>
+<p>Para alterar o teste de médias, é necessário alterar o argumento <code>mcomp</code>.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="delineamento-inteiramente-casualizado.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(pomegranate, <span class="fu">DIC</span>(trat, WL)) <span class="co"># tukey</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="delineamento-inteiramente-casualizado.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(pomegranate, <span class="fu">DIC</span>(trat, WL, <span class="at">mcomp =</span> <span class="st">&quot;sk&quot;</span>)) <span class="co"># Scott-Knott</span></span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="delineamento-inteiramente-casualizado.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(pomegranate, <span class="fu">DIC</span>(trat, WL, <span class="at">mcomp =</span> <span class="st">&quot;duncan&quot;</span>)) <span class="co"># Duncan</span></span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="delineamento-inteiramente-casualizado.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(pomegranate, <span class="fu">DIC</span>(trat, WL, <span class="at">mcomp =</span> <span class="st">&quot;lsd&quot;</span>)) <span class="co"># LSD</span></span></code></pre></div>
+<hr />
+</div>
+</div>
+<div id="transformando-dados" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Transformando dados</h2>
+<hr />
+<ul>
+<li>O modelo de Análise de Variância pressupõe que exista homocedasticidade, ou seja, que os tratamentos apresentem a mesma variabilidade;</li>
+<li>Algumas vezes este pressuposto pode não ser atendido e assim, para corrigir este problema existe uma saída por vezes bastante simples que é a transformação de dados;</li>
+<li>Esta técnica consiste na utilização de um artifício matemático para tornar o modelo de ANOVA válido.</li>
+</ul>
+<div id="heterogeneidade-irregular" class="section level5" number="4.3.0.0.1">
+<h5><span class="header-section-number">4.3.0.0.1</span> Heterogeneidade Irregular</h5>
+<ul>
+<li><p>Ocorre quando alguns tratamentos apresentam maior variabilidade do que outros, contudo, não existe uma associação entre média e variância;</p></li>
+<li><p>Neste caso, não há uma transformação matemática que elimine esta variabilidade.</p></li>
+</ul>
+<p>Solução:</p>
+<ul>
+<li><p>Modelos Lineares Generalizados;</p></li>
+<li><p>Análise não paramétrica.</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="heterogeneidade-regular" class="section level5" number="4.3.0.0.2">
+<h5><span class="header-section-number">4.3.0.0.2</span> Heterogeneidade Regular</h5>
+<ul>
+<li>Acontece quando existe alguma associação entre as médias dos tratamentos e a variância;</li>
+<li>A heterocedasticidade regular está associada é falta de normalidade do erros;</li>
+</ul>
+<p>Solução:</p>
+<ul>
+<li><p>Transformação dos dados;</p></li>
+<li><p>Modelos Lineares Generalizados;</p></li>
+<li><p>Análise não paramétrica.</p></li>
+</ul>
+<p><br></p>
+<hr />
+</div>
+<div id="princípio-de-transformação" class="section level5" number="4.3.0.0.3">
+<h5><span class="header-section-number">4.3.0.0.3</span> Princípio de transformação</h5>
+<hr />
+<p><br></p>
+<p>Seja <span class="math inline">\(E(Y) = \mu\)</span> a média de Y e suponha que o desvio padrão de Y é proporcional a potência da média de Y tal que:</p>
+<center>
+<p><span class="math inline">\(\sigma Y \alpha \mu^\alpha.\)</span></p>
+</center>
+<p>O objetivo é encontrar uma transformação de <span class="math inline">\(Y\)</span> que gere uma variância constante.</p>
+<p>Suponha que a transformação é uma potência dos dados originais, isto é:</p>
+<center>
+<p><span class="math inline">\(Y^*=Y^\lambda\)</span></p>
+</center>
+<p>Assim, pode ser mostrado que:</p>
+<center>
+<p><span class="math inline">\(\sigma Y^* \alpha \mu^{\lambda+ \alpha-1}.\)</span></p>
+</center>
+<p>Caso <span class="math inline">\(\lambda = 1-\alpha\)</span>, então a variância dos dados transformados <span class="math inline">\(Y^*\)</span> é constante, mostrando que <strong>não é necessário transformação</strong>.</p>
+<p>Algumas das transformações mais comuns são:</p>
+<p><br></p>
+<center>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(\lambda\)</span></th>
+<th align="center">Transformação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">Nenhuma</td>
+</tr>
+<tr class="even">
+<td align="center">0,5</td>
+<td align="center"><span class="math inline">\(\sqrt{y}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">0</td>
+<td align="center">log(y)</td>
+</tr>
+<tr class="even">
+<td align="center">-0,5</td>
+<td align="center"><span class="math inline">\(\frac{1}{\sqrt{y}}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">-1</td>
+<td align="center"><span class="math inline">\(\frac{1}{y}\)</span></td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>Box &amp; Cox (1964) mostraram como o parâmetro de transformação <span class="math inline">\(\lambda\)</span> em <span class="math inline">\(Y^* = Y^\lambda\)</span> pode ser estimado simultaneamente com outros parâmetros do modelo (média geral e efeitos de tratamentos) usando o método de máxima verossimilhança. O procedimento consiste em realizar, para vários valores de <span class="math inline">\(\lambda\)</span>, uma análise de variância padrão sobre:</p>
+<p><span class="math display">\[Y_i(\lambda) = \left\{ \begin{array}{ll} \ln(X_i),~~~~~~\textrm{se $\lambda = 0$,} \\ \\ \dfrac{X_i^{\lambda} - 1}{\lambda},~~~~\textrm{se $\lambda \neq 0$,}\end{array} \right.\]</span></p>
+<p>A estimativa de máxima verossimilhança de <span class="math inline">\(\lambda\)</span> é o valor para o qual a soma de quadrado do resíduo, SQRes(<span class="math inline">\(\lambda\)</span>), é mínima.</p>
+<p>Este valor de <span class="math inline">\(\lambda\)</span> é encontrado através do gráfico de SQRes(<span class="math inline">\(\lambda\)</span>) <em>versus</em> <span class="math inline">\(\lambda\)</span>, sendo que <span class="math inline">\(\lambda\)</span> é o valor que minimiza a SQRes(<span class="math inline">\(\lambda\)</span>).</p>
+<p>Ou, ainda, o valor de <span class="math inline">\(\lambda\)</span> que maximiza a função de logverossimilhança.</p>
+<p><br></p>
+<p>Um intervalo de confiança <span class="math inline">\(100(1-\alpha)\)</span>% para <span class="math inline">\(\lambda\)</span> pode ser encontrado calculando-se:</p>
+<center>
+<p><span class="math inline">\(IC(\lambda) = SQRes(\lambda)(1 \pm \frac{t2^2/2=2;v }{v})\)</span></p>
+</center>
+<p>em que <span class="math inline">\(v\)</span> é o número de graus de liberdade.</p>
+<p>Se o intervalo de confiança incluir o valor <span class="math inline">\(\lambda = 1\)</span>, isto quer dizer que não é necessário transformar os dados.</p>
+<p>No pacote AgroR, o argumento <code>transf</code> define a transformação solicitada, conforme a seguir:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="delineamento-inteiramente-casualizado.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(pomegranate, <span class="fu">DIC</span>(trat, WL, <span class="at">transf =</span> <span class="dv">0</span>))</span></code></pre></div>
+<pre><code>## 
+## -----------------------------------------------------------------
+## Normality of errors
+## -----------------------------------------------------------------
+##                          Method Statistic   p.value
+##  Shapiro-Wilk normality test(W) 0.9694183 0.6526381</code></pre>
+<pre><code>## As the calculated p-value is greater than the 5% significance level, hypothesis H0 is not rejected. Therefore, errors can be considered normal</code></pre>
+<pre><code>## 
+## -----------------------------------------------------------------
+## Homogeneity of Variances
+## -----------------------------------------------------------------
+##                               Method Statistic   p.value
+##  Bartlett test(Bartlett&#39;s K-squared)  5.657984 0.3409331</code></pre>
+<pre><code>## As the calculated p-value is greater than the 5% significance level,hypothesis H0 is not rejected. Therefore, the variances can be considered homogeneous</code></pre>
+<pre><code>## 
+## -----------------------------------------------------------------
+## Independence from errors
+## -----------------------------------------------------------------
+##                  Method Statistic   p.value
+##  Durbin-Watson test(DW)  2.001907 0.1261966</code></pre>
+<pre><code>## As the calculated p-value is greater than the 5% significance level, hypothesis H0 is not rejected. Therefore, errors can be considered independent</code></pre>
+<pre><code>## 
+## -----------------------------------------------------------------
+## Additional Information
+## -----------------------------------------------------------------
+## 
+## CV (%) =  12.59
+## R-squared =  0.94
+## Mean =  2.2596
+## Median =  2.225
+## Possible outliers =  No discrepant point
+## 
+## -----------------------------------------------------------------
+## Analysis of Variance
+## -----------------------------------------------------------------
+##           Df    Sum Sq    Mean.Sq  F value        Pr(F)
+## trat       5 0.7834427 0.15668854 15.61523 5.318727e-06
+## Residuals 18 0.1806181 0.01003434</code></pre>
+<pre><code>## As the calculated p-value, it is less than the 5% significance level.The hypothesis H0 of equality of means is rejected. Therefore, at least two treatments differ</code></pre>
+<pre><code>## 
+## 
+## -----------------------------------------------------------------
+## Multiple Comparison Test
+## -----------------------------------------------------------------
+##         resp groups  respO
+## T5 0.9687134      a 2.6375
+## T3 0.9570245      a 2.6175
+## T4 0.9537130      a 2.6200
+## T6 0.7705460     ab 2.1625
+## T1 0.6068284     bc 1.8425
+## T2 0.5152916      c 1.6775</code></pre>
+<pre><code>## 
+## NOTE: resp = transformed means; respO = averages without transforming</code></pre>
+<p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-10-1.png" width="672" /><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-10-2.png" width="672" /></p>
+</div>
+</div>
+<div id="kruskal-wallis" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Kruskal-Wallis</h2>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="delineamento-inteiramente-casualizado.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(pomegranate, <span class="fu">DIC</span>(trat, WL, <span class="at">test =</span> <span class="st">&quot;noparametric&quot;</span>, <span class="at">geom=</span><span class="st">&quot;point&quot;</span>))</span></code></pre></div>
+<pre><code>## 
+## 
+## -----------------------------------------------------------------
+## Statistics
+## -----------------------------------------------------------------
+##      Chisq     p.chisq
+##   18.75631 0.002133687
+## 
+## 
+## -----------------------------------------------------------------
+## Parameters
+## -----------------------------------------------------------------
+##             test p.ajusted name.t ntr alpha
+##   Kruskal-Wallis      holm   trat   6  0.05
+## 
+## 
+## -----------------------------------------------------------------
+## Multiple Comparison Test
+## -----------------------------------------------------------------
+##      Mean         SD  Rank Groups
+## T1 1.8425 0.19939492  5.75      c
+## T2 1.6775 0.12284814  3.50      c
+## T3 2.6175 0.30619983 18.25     ab
+## T4 2.6200 0.42669271 17.25     ab
+## T5 2.6375 0.14244882 19.50      a
+## T6 2.1625 0.09429563 10.75     bc</code></pre>
+<p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<div id="alterando-parâmetros-gráficos" class="section level4" number="4.4.0.1">
+<h4><span class="header-section-number">4.4.0.1</span> Alterando parâmetros gráficos</h4>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="delineamento-inteiramente-casualizado.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(pomegranate, <span class="fu">DIC</span>(trat, WL, <span class="at">geom=</span><span class="st">&quot;point&quot;</span>)) <span class="co"># tipo de gráfico</span></span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="delineamento-inteiramente-casualizado.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(pomegranate, <span class="fu">DIC</span>(trat, WL, </span>
+<span id="cb44-2"><a href="delineamento-inteiramente-casualizado.html#cb44-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">ylab =</span> <span class="st">&quot;Weight loss (%)&quot;</span>, </span>
+<span id="cb44-3"><a href="delineamento-inteiramente-casualizado.html#cb44-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">xlab=</span><span class="st">&quot;Treatments&quot;</span>)) <span class="co"># nome de eixos</span></span></code></pre></div>
+</div>
+</div>
+<div id="fator-quantitativo" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Fator Quantitativo</h2>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="delineamento-inteiramente-casualizado.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
+<span id="cb45-2"><a href="delineamento-inteiramente-casualizado.html#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;phao&quot;</span>)</span>
+<span id="cb45-3"><a href="delineamento-inteiramente-casualizado.html#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(phao, <span class="fu">DIC</span>(dose,comp,<span class="at">quali=</span><span class="cn">FALSE</span>,<span class="at">grau=</span><span class="dv">2</span>))</span></code></pre></div>
+<pre><code>## 
+## -----------------------------------------------------------------
+## Normality of errors
+## -----------------------------------------------------------------
+##                          Method Statistic   p.value
+##  Shapiro-Wilk normality test(W) 0.9647717 0.5174008</code></pre>
+<pre><code>## As the calculated p-value is greater than the 5% significance level, hypothesis H0 is not rejected. Therefore, errors can be considered normal</code></pre>
+<pre><code>## 
+## -----------------------------------------------------------------
+## Homogeneity of Variances
+## -----------------------------------------------------------------
+##                               Method Statistic   p.value
+##  Bartlett test(Bartlett&#39;s K-squared)  4.428915 0.3510598</code></pre>
+<pre><code>## As the calculated p-value is greater than the 5% significance level,hypothesis H0 is not rejected. Therefore, the variances can be considered homogeneous</code></pre>
+<pre><code>## 
+## -----------------------------------------------------------------
+## Independence from errors
+## -----------------------------------------------------------------
+##                  Method Statistic    p.value
+##  Durbin-Watson test(DW)  1.801827 0.08064338</code></pre>
+<pre><code>## As the calculated p-value is greater than the 5% significance level, hypothesis H0 is not rejected. Therefore, errors can be considered independent</code></pre>
+<pre><code>## 
+## -----------------------------------------------------------------
+## Additional Information
+## -----------------------------------------------------------------
+## 
+## CV (%) =  11.71
+## R-squared =  0.93
+## Mean =  14.436
+## Median =  15.3
+## Possible outliers =  No discrepant point
+## 
+## -----------------------------------------------------------------
+## Analysis of Variance
+## -----------------------------------------------------------------
+##           Df   Sum Sq Mean.Sq  F value        Pr(F)
+## trat       4 145.8096 36.4524 12.76166 2.557884e-05
+## Residuals 20  57.1280  2.8564</code></pre>
+<pre><code>## As the calculated p-value, it is less than the 5% significance level.The hypothesis H0 of equality of means is rejected. Therefore, at least two treatments differ</code></pre>
+<p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<pre><code>## 
+## 
+## -----------------------------------------------------------------
+## Regression
+## -----------------------------------------------------------------</code></pre>
+<p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-13-2.png" width="672" /></p>
+<pre><code>##               Estimate Std. Error   t value     Pr(&gt;|t|)
+## (Intercept) 10.2097143 0.68981140 14.800733 6.427099e-13
+## trat         2.8822857 0.40856781  7.054608 4.456995e-07
+## I(trat^2)   -0.3042857 0.04897332 -6.213296 2.971498e-06
+## 
+## ----------------------------------------------------
+## Deviations from regression
+## ----------------------------------------------------
+##  GL       SQ         F   p-value
+##   2 1.968229 0.3445296 0.7126767</code></pre>
+<p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-13-3.png" width="672" /></p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="análise-descritiva.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="delineamento-em-blocos-casualizados.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["AgroR_Tutorial.pdf", "AgroR_Tutorial.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

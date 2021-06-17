@@ -1,5 +1,9 @@
 # DICT, DBCT e DQLT
 
+Em algumas áreas das ciências agrárias, é comum realizar avaliações ao longo do tempo ou conduzir experimentos em que uma das variáveis explicativas não é de interesse e o pesquisador queira analisar individualmente, todavia, apresentando em um único gráfico. Nesse sentido, foi desenvolvido as funções DICT, DBCT e DQLT.
+
+**Nota**: Quando constatado que não efeito significativo, no gráfico, irá exibir como "ns"
+
 ## DICT
 
 ```{r}
@@ -19,5 +23,15 @@ with(simulate2, DBCT(trat, bloco, tempo, resp))
 ```{r}
 data(simulate3)
 with(simulate3, DQLT(trat, linhas, colunas, tempo, resp))
+```
+
+## TBARPLOT.reverse
+
+A pedido de alguns usuários, foi desenvolvido a função TBARPLOT.reverse, que realiza um gráfico reverso ao gráfico de colunas do default das funções, ou seja, ao invés da variável que não é de interesse ser representada pelo eixo x, ela será adicionada a legenda e a variável de interesse será representada no eixo x.
+
+```{r}
+data(simulate1)
+a=with(simulate1, DICT(trat, tempo, resp))
+TBARPLOT.reverse(a)
 ```
 

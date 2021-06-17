@@ -1,4 +1,150 @@
-# Split-plot and split-splitplot
+# Parcela subdividida
+
+<br><br>
+
+****
+
+## Teoria
+
+****
+
+
+- Tal como no caso de fatorial, o termo parcelas subdivididas não se refere a um tipo de delineamento e sim ao esquema do experimento, ou seja, a maneira pela qual os tratamentos são organizados.
+- Nos experimentos em parcelas subdivididas, em geral, estuda-se simultaneamente dois tipos de fatores os quais são geralmente denominados de fatores primários e fatores secundários.
+- Em um experimento em parcelas subdivididas, as unidades experimentais são agrupadas em parcelas as quais devem conter um número de unidades experimentais (subparcelas) igual ao
+número de níveis do fator secundário.
+- Na instalação os níveis do fator primário (A) são distribuidos às parcelas segundo um tipo de delineamento experimental: DIC, DBC, DQL.
+- Posteriormente os níveis do fator secundário (B) são distribuídos ao acaso às subparcerlas de cada parcela.Tal disposição permite obter uma estimativa geral de maior precisão para os efeitos dos tratamentos do segundo fator.
+- Nos experimentos em parcelas subdivididas tem-se dois resíduos distintos: um correspondente às parcelas e outro às subparcelas dentro das parcelas.
+- Em casos mais complexos, as subparcelas podem, também, ser repartidas em subsubparcelas. Tem-se, neste caso, três resíduos distintos:
+  - resíduo (a), referente às parcelas;
+  - resíduo (b), à subparcelas e
+  - resíduo (c), correspondendo às subsubparcelas.
+
+<br>
+
+****
+
+### Vantagens
+
+****
+
+<br>
+
+a) Em comparação com experimentos fatoriais, experimentos em parcelas subdivididas são mais fáceis de instalar;
+
+b) Quando os tratamentos associados aos níveis de um dos fatores exigem maior quantidade de material na unidade experimental do que os tratamentos do outro fator.
+
+c) O esquema pode ser utilizado quando um fator adicional é incorporado num experimento, para ampliar seu objetivo.
+
+d) Através da prévia informação, sabe-se que maiores diferenças podem ser esperadas entre os níveis de um certo fator do que entre os níveis do outro fator.
+
+<br>
+
+****
+
+### Desvantagens
+
+****
+
+<br>
+
+a) Do ponto de vista estatístico, os fatoriais são, em geral, mais eficientes que os em parcelas subdivididas;
+
+b) Enquanto nos fatoriais temos um são resíduo para todos os F e comparações de médias, no *"split-plot"* há dois resíduos, um para comparações de parcelas e outro para subparcelas;
+
+c) Para parcela, o número de GL geralmente é pequeno, levando à pouca sensibilidade na análise;
+
+d) Sempre que possível, é preferível utilizar experimentos fatoriais em lugar dos experimentos em parcelas subdivididas.
+
+<br>
+
+****
+
+### Modelo estatístico
+
+****
+
+<br>
+
+O modelo linear para o experimento em parcelas subdivididas no delineamento em blocos ao acaso é dado por:
+
+<center>
+
+$yijk = \mu+\tau_{i}+\gamma_{k}+(\tau\gamma)_{ik}+\beta_{j}+(\tau\beta)_{ij}+(\tau\beta\gamma)_{ijk}$
+
+</center>
+
+- i = 1; 2; : : : ; a
+- j = 1; 2; : : : ; b
+- k = 1; 2; : : : ; r
+
+em que:
+
+- $y_{ijk}$ é o valor observado no i-ésimo tratamento, k-ésimo bloco e j-ésima subparcela;
+- $\mu$ é uma constante;
+- $\tau_{i}$ é o efeito do i-ésimo fator A;
+- $\gamma_{k}$ é o efeito do k-ésimo bloco;
+- $(\tau\gamma)_{ik}$ é o resíduo (a) da parcela;
+- $\beta_{j}$ é o efeito do j-ésimo fator B;
+- $(\tau\beta)_ij$ é a interação entre o i-ésimo fator A e o j-ésimo fator B;
+- $(\tau\beta\gamma)ijk$ é o resíduo (b) da subparcela;
+
+<br>
+
+****
+
+### Hipóteses e modelo
+
+****
+
+<br>
+
+No experimento em parcelas subdivididas com 2 fatores, deseja-se testar a signicância de ambos os fatores. Há interesse em testar hipóteses sobre a igualdade dos efeitos do fator primário, isto é:
+
+\begin{eqnarray*}
+\left\{
+\begin{array}{ll}
+H_0: & \mu_1 = \mu_2 = \mu_3 = \cdots = \mu_{a} \\[.2cm]
+H_1: & \mu_i \neq \mu_i' \qquad i \neq i'.
+\end{array}
+\right.
+\end{eqnarray*}
+
+e a igualdade nos efeitos do fator secundário, ou seja:
+
+\begin{eqnarray*}
+\left\{
+\begin{array}{ll}
+H_0: & \mu_1 = \mu_2 = \mu_3 = \cdots = \mu_{b} \\[.2cm]
+H_1: & \mu_i \neq \mu_i' \qquad i \neq i'.
+\end{array}
+\right.
+\end{eqnarray*}
+
+e, ainda, se há interação entre os fatores:
+
+\begin{eqnarray*}
+\left\{
+\begin{array}{ll}
+H_0: & (\tau\beta)ij = 0 \mbox{para todo} i ; j \\[.2cm]
+H_1: & \mbox{Pelo menos um} (\tau\beta)ij \neq 0
+\end{array}
+\right.
+\end{eqnarray*}
+
+CV             | G.L.         |S.Q.             |Q.M.                              |  Fcalc 
+--------------:|:---------:|:-------------:|:-------------------------:|:------------------------:|:-------------
+Bloco          | $r-1$        | $SQ_{Bloc}$     | $\frac{SQ_{Bloc}}{r-1}$          | $\frac{QM_{Bloc}}{QM_{Res(a)}}$
+Tratamento A   | $a - 1$      | $SQ_{A}$        | $\frac{SQ_{A}}{a-1}$             | $\frac{QM_{A}}{QM_{Res(a)}}$ 
+resíduo A      | $(a-1)(r-1)$ | $SQ_{Res(A)}$   | $\frac{SQ_{res(A)}}{(a-1)(r-1)}$ | 
+Parcelas       | $ar-1$       | $SQ_{Parcelas}$ |  -                               |        
+Tratamento B   | $b-1$        | $SQ_{B}$        | $\frac{SQ_{B}}{b-1}$             | $\frac{QM_{B}}{QM_{Res(b)}}$
+Interação A x B | $(a-1)(b-1)$ | $SQ_{AxB}$      | $\frac{SQ_{AB}}{(a-1)(b-1)}$     | $\frac{QM_{AxB}}{QM_{Res(b)}}$
+resíduo B      | $a(a-1)(r-1)$| $SQ_{Res(B)}$   | $\frac{SQ_{Res(b)}}{(r-1)(b-1)}$ | 
+Total          | $abr-1$      | $SQ_{Total}$    | -                                | 
+
+<br>
 
 ## PSUBDIC
 

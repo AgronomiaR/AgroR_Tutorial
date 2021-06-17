@@ -4,16 +4,32 @@ h2:dois-fatores Dois fatores
 h2:três-fatores Três fatores
 h2:dispvar dispvar
 h2:tabledesc tabledesc
-h1:delineamentos-simples Delineamentos simples
-h2:delineamento-inteiramente-casualizado Delineamento inteiramente casualizado
-h3:default default
-h3:alterando-teste-de-médias Alterando teste de médias
-h3:alterando-para-teste-não-paramétrico-de-kruskal-wallis Alterando para teste não-paramétrico de Kruskal-Wallis
-h3:transformando-dados Transformando dados
-h3:alterando-parâmetros-gráficos Alterando parâmetros gráficos
-h3:para-fator-quantitativo Para fator quantitativo
-h2:delineamento-em-blocos-casualizados Delineamento em blocos casualizados
-h3:teste-de-friedman Teste de Friedman
-h2:delineamento-em-quadrado-latino Delineamento em quadrado latino
-h2:dic-e-dbc-por-glm DIC e DBC por glm
+h1:delineamento-inteiramente-casualizado Delineamento Inteiramente Casualizado
+h2:teoria Teoria
+h3:vantagens Vantagens
+h3:desvantagens Desvantagens
+h3:modelo-matemático-para-dic Modelo matemático para DIC
+h3:hipóteses-e-modelo Hipóteses e Modelo
+h2:dic DIC
+h4:default default
+h4:alterando-teste-de-médias Alterando teste de médias
+h2:transformando-dados Transformando dados
+h5:heterogeneidade-irregular Heterogeneidade Irregular
+h5:heterogeneidade-regular Heterogeneidade Regular
+h5:princípio-de-transformação Princípio de transformação
+h2:kruskal-wallis Kruskal-Wallis
+h4:alterando-parâmetros-gráficos Alterando parâmetros gráficos
+h2:fator-quantitativo Fator Quantitativo
+h1:delineamento-em-blocos-casualizados Delineamento em blocos casualizados
+h2:teoria-1 Teoria
+h3:vantagens-1 Vantagens
+h3:desvantagens-1 Desvantagens
+h3:modelo-matemático Modelo matemático
+h3:hipóteses-e-modelo-1 Hipóteses e Modelo
+h2:teste-de-friedman Teste de Friedman
+h1:delineamento-em-quadrado-latino Delineamento em quadrado latino
+h2:teoria-2 Teoria
+h3:modelo-matemático-1 Modelo matemático
+h3:hipóteses-e-modelo-2 Hipóteses e Modelo
+h1:dic-e-dbc-por-glm DIC e DBC por glm
 

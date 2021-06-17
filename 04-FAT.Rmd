@@ -1,5 +1,129 @@
 # Esquema fatoria duplo
 
+****
+
+## Teoria
+
+****
+
+Nos experimentos mais simples comparamos níveis (tratamentos) de apenas um fator; Entretanto, existem casos em que dois ou mais fatores devem ser estudados simultaneamente para que possam nos conduzir a resultados de interesse;
+
+Em geral, os experimentos fatoriais são mais eficientes para este tipo de experimento, pois estudam, ao mesmo tempo, os efeitos de dois ou mais fatores, cada um deles com dois ou mais níveis.
+
+O fatorial é um tipo de esquema, ou seja, uma das maneiras de organizar os tratamentos e não um tipo de delineamento;
+
+Os experimentos fatoriais são montados segundo um tipo de delineamento experimental;
+
+Nos experimentos fatoriais, os tratamentos são obtidos pelas combinações dos níveis dos fatores.
+
+<br>
+
+****
+
+### Tipos de efeitos avaliados
+
+****
+
+<br>
+
+- Efeito Principal: é o efeito de cada fator, independente do efeito dos outros fatores;
+
+- Efeito de Interação: é o efeito simultâneo dos fatores sobre a variável em estudo. Dizemos que ocorre interação entre os fatores quando os efeitos dos níveis de um fator são modificados pelos níveis do outro fator.
+
+<br>
+
+****
+
+### Vantagens
+
+****
+
+<br>
+
+a) Pode-se estudar dois ou mais fatores num único experimento.
+
+b) Pode-se, por meio dos efeitos das interações, verificar se um fator é independente ou dependente do(s) outro(s).
+
+****
+
+### Desvantagens
+
+****
+
+<br>
+
+a) O número de tratamentos ou combinações de níveis de fatores cresce, rapidamente, com o aumento do número de níveis, em cada fator, ou mesmo com o aumento do número de fatores.
+
+b) A interpretação dos resultados se torna mais difícil é medida que aumentamos o número de níveis e de fatores no experimento.
+
+<br>
+
+****
+
+### Modelo estatístico
+
+****
+
+<br>
+
+As observações podem ser descritas pelo modelo estatístico linear:
+
+<center>
+
+$y_{ij} = \mu+\tau_{i}+\beta_{j}+(\tau\beta)_{ij}+\epsilon_{ij}$
+
+</center>
+
+- i = 1; 2; : : : ; a
+- j = 1; 2; : : : ; b
+- k = 1; 2; : : : ; r
+
+em que:
+
+- $y_{ijk}$ é o valor observado no i-ésimo nivel do Fator A e j-ésima nível do Fator B;
+- $\mu$ é uma constante;
+- $\tau_{i}$ é o efeito do i-ésimo nível do fator A;
+- $\beta_{j}$ é o efeito do j-ésimo nível do fator B;
+- $(\tau\beta)_ij$ é o efeito da interação entre $\tau_{i}$ e $\beta_{j}$;
+- $(\epsilon)ijk$ é o componente de erro aleatório.
+
+<br>
+
+****
+
+### Hipóteses e quadro da análise de variância
+
+****
+
+<br>
+
+No experimento fatorial com 2 fatores, deseja-se testar a signicância de ambos os fatores. 
+
+Há interesse em testar hipóteses sobre a igualdade dos efeitos do fator A, isto é:
+
+- H0 : $\beta_{11}$ = $\beta_{12}$ = : : : $\beta_{1a}$ = 0
+- H1 : Pelo menos um $\beta_{1i} \neq 0$
+
+e a igualdade nos efeitos do fator B, ou seja:
+
+- H0 : $\beta_{21}$ = $\beta_{22}$ = : : : $\beta_{2b}$ = 0
+- H1 : Pelo menos um $\beta_{2j} \neq 0$
+
+e, ainda, se há interação entre os fatores:
+
+- H0 : $(\beta_1\beta_2)_{ij}$ = 0 para todo i ; j
+- H1 : Pelo menos um $(\beta_1\beta_2)_{ij} \neq 0$
+
+CV              | G.L.        |S.Q.         |Q.M.                          | Fcalc 
+---------------:|:-----------:|:-----------:|:----------------------------:|:---------------------------------
+Fator A         | $a - 1$     | $SQ_{A}$    | $\frac{SQ_{A}}{a-1}$         | $\frac{QM_{A}}{QM_{Res}}$ 
+Fator B         | $b-1$       | $SQ_{B}$    | $\frac{SQ_{B}}{b-1}$         | $\frac{QM_{B}}{QM_{Res}}$
+Interação A x B | $(a-1)(b-1)$| $SQ_{AxB}$  | $\frac{SQ_{AxB}}{(a-1)(b-1)}$| $\frac{QM_{AxB}}{QM_{Res}}$
+resíduo         | $ab(n-1)$   | $SQ_{Res}$  | $\frac{SQ_{Res(b)}}{ab(n-1)}$| 
+Total           | $abn-1$     | $SQ_{Total}$| -                            | 
+
+<br>
+
 ## FAT2DIC
 
 ```{r}
@@ -46,6 +170,147 @@ with(cloro, FAT2DIC.art(f1,f2,resp))
 data(cloro)
 with(cloro,FAT2DBC.art(f1,f2,bloco,resp))
 ```
+
+# Fatorial triplo
+
+<br><br>
+
+****
+
+## Teoria
+
+****
+
+Nos experimentos mais simples comparamos níveis (tratamentos) de apenas um fator; entretanto, existem casos em que dois ou mais fatores devem ser estudados simultaneamente para que possam nos conduzir a resultados de interesse;
+
+Em geral, os experimentos fatoriais são mais eficientes para este tipo de experimento, pois estudam, ao mesmo tempo, os efeitos de dois ou mais fatores, cada um deles com dois ou mais níveis.
+
+O fatorial é um tipo de esquema, ou seja, uma das maneiras de organizar os tratamentos e não um tipo de delineamento;
+
+Os experimentos fatoriais são montados segundo um tipo de delineamento experimental;
+
+Nos experimentos fatoriais, os tratamentos são obtidos pelas combinações dos níveis dos fatores.
+
+<br>
+
+****
+
+### Tipos de efeitos avaliados
+
+****
+
+<br>
+
+- Efeito Principal: é o efeito de cada fator, independente do efeito dos outros fatores;
+
+- Efeito de Interação: é o efeito simultâneo dos fatores sobre a variável em estudo. Dizemos que ocorre interação entre os fatores quando os efeitos dos níveis de um fator são modificados pelos níveis do outro fator.
+
+<br>
+
+****
+
+### Vantagens
+
+****
+
+<br>
+
+a) Pode-se estudar dois ou mais fatores num único experimento.
+
+b) Pode-se, por meio dos efeitos das interações, verificar se um fator é independente ou dependente do(s) outro(s).
+
+****
+
+### Desvantagens
+
+****
+
+<br>
+
+a) O número de tratamentos ou combinações de níveis de fatores cresce, rapidamente, com o aumento do número de níveis, em cada fator, ou mesmo com o aumento do número de fatores.
+
+b) A interpretação dos resultados se torna mais difícil é medida que aumentamos o número de níveis e de fatores no experimento.
+
+<br>
+
+****
+
+### Modelo estatístico
+
+****
+
+<br>
+
+As observações podem ser descritas pelo modelo estatístico linear:
+
+<center>
+
+$y_{ijk} = \mu+\beta_{1i}+\beta_{2j}+\beta_{3k}+(\beta_1\beta_2)_{ij}+(\beta_1\beta_3)_{ik}+(\beta_2\beta_3)_{jk}+(\beta_1\beta_2\beta_3)_{ijk}+\epsilon_{ijk}$
+
+</center>
+
+- i = 1; 2; : : : ; a
+- j = 1; 2; : : : ; b
+- k = 1; 2; : : : ; c
+
+em que:
+
+- $y_{ijk}$ é o valor observado no i-ésimo nível do fator A, j-ésima nível do fator B e k-ésimo nível do fator C;
+- $\mu$ é uma constante;
+- $\beta_{1i}$ é o efeito do i-ésimo nível do fator A;
+- $\beta_{2j}$ é o efeito do j-ésimo nível do fator B;
+- $\beta_{3k}$ é o efeito do j-ésimo nível do fator C;
+- $(\beta_1\beta_2)_ij$ é o efeito da interação entre $\beta_{1i}$ e $\beta_{2j}$;
+- $(\beta_1\beta_3)_ik$ é o efeito da interação entre $\beta_{1i}$ e $\beta_{3j}$;
+- $(\beta_2\beta_3)_jk$ é o efeito da interação entre $\beta_{2i}$ e $\beta_{3j}$;
+- $(\beta_1\beta_2\beta_3)_{ijk}$ é o efeito da interação entre $\beta_{1i}$, $\beta_{2j}$ e $\beta_{3k}$;
+- $(\epsilon)ijk$ é o componente de erro aleatório.
+
+<br>
+
+****
+
+### Hipóteses e modelo
+
+****
+
+<br>
+
+No experimento fatorial com 3 fatores, deseja-se testar a signicância de ambos os fatores. 
+
+No experimento fatorial com 2 fatores, deseja-se testar a signicância de ambos os fatores. 
+
+Há interesse em testar hipóteses sobre a igualdade dos efeitos do fator A, isto é:
+
+- H0 : $\beta_{11}$ = $\beta_{12}$ = : : : $\beta_{1a}$ = 0
+- H1 : Pelo menos um $\beta_{1i} \neq 0$
+
+e a igualdade nos efeitos do fator B, ou seja:
+
+- H0 : $\beta_{21}$ = $\beta_{22}$ = : : : $\beta_{2b}$ = 0
+- H1 : Pelo menos um $\beta_{2j} \neq 0$
+
+e, ainda, se há interação entre os fatores A e B:
+
+- H0 : $(\beta_1\beta_2)_{ij}$ = 0 para todo i ; j
+- H1 : Pelo menos um $(\beta_1\beta_2)_{ij} \neq 0$
+
+e, ainda, se há interação entre os fatores A e C:
+
+- H0 : $(\beta_1\beta_3)_{ik}$ = 0 para todo i ; k
+- H1 : Pelo menos um $(\beta_1\beta_3)_{ik} \neq 0$
+
+e, ainda, se há interação entre os fatores B e C:
+
+- H0 : $(\beta_2\beta_3)_{jk}$ = 0 para todo j ; k
+- H1 : Pelo menos um $(\beta_2\beta_3)_{jk} \neq 0$
+
+e, ainda, se há interação entre os fatores A e B e C:
+
+- H0 : $(\beta_1\beta_2\beta_3)_{ijk}$ = 0 para todo i ; j; k
+- H1 : Pelo menos um $(\beta_1\beta_2\beta_3)_{ijk} \neq 0$
+
+<br><br><br>
 
 ## FAT3DIC
 

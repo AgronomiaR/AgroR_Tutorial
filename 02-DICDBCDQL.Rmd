@@ -44,59 +44,299 @@ data(pomegranate)
 tabledesc(pomegranate)
 ```
 
-# Delineamentos simples
+****
 
-## Delineamento inteiramente casualizado
+# Delineamento Inteiramente Casualizado
+
+****
+
+<br><br>
+
+****
+
+## Teoria
+
+****
+
+O Delineamento inteiramente casualizado é considerado o delineamento mais simples dentro da estatistica. No DIC as unidades experimentais são destinadas a cada tratamento de uma forma inteiramente casual (sorteio). Os experimentos formulados com este delineamento são denominados "experimentos inteiramente ao acaso".
+
+<br>
+
+O DIC apresenta as seguintes características:
+
+- Considera apenas os princípios de repetição e casulização;
+- Os tratamentos são divididos em parcelas de forma inteiramente casual;
+- Exige que o material experimental seja semelhante e que as condições de estudo sejam completamentes uniformes;
+- Os aspectos que devem ser considerados na semelhança entre as U.E. são aqueles que interferem nas respostas das mesmas aos tratamentos;
+- Ele geralmente é mais utilizado em experimentos nos quais as condições experimentais podem ser bastante controladas (por exemplo em laboratórios);
+
+<br>
+
+****
+
+### Vantagens
+
+****
+
+- Delineamento flexível - número de tratamentos e repetições depende apenas da quantidade de parcelas disponíveis
+
+- O número de repetições pode diferir de um tratamento para o outro (experimento não balanceado)
+
+- A análise estatística é simples
+
+- O número de G.L. resíduo é o maior possível
+
+<br>
+
+****
+
+### Desvantagens
+
+****
+
+- Exige homogeneidade das condições ambientais
+
+- Pode estimar uma variância residual muito alta
+
+****
+
+### Modelo matemático para DIC
+
+****
+
+\begin{eqnarray}
+y_{ji}=\mu+\tau_i+\varepsilon_{ij}
+\end{eqnarray}
+
+$y_{ji}$: é a observação referente ao tratamento i na repetição j;
+
+$\mu$: é a média geral (ou constante comum a todas as observações);
+
+$\tau_i$: é o efeito de tratamento, com $i = 1, 2, . . . , I$;
+
+$\varepsilon_{ij}$: é o erro experimental, tal que $\varepsilon_{ij}$~N(0; $\sigma^2$).
+
+****
+
+### Hipóteses e Modelo 
+
+****
+
+\begin{eqnarray*}
+\left\{
+\begin{array}{ll}
+H_0: & \mu_1 = \mu_2 =\mu_i\\[.2cm]
+H_1: & \mu_i \neq \mu_i' \qquad i \neq i'.
+\end{array}
+\right.
+\end{eqnarray*}
+
+CV            | G.L.    |S.Q.         |Q.M.                     |  Fcalc                 | Ftab
+-------------:|:-------:|:-----------:|:-----------------------:|:----------------------:|:----------------------------------
+Tratamentos   | $a - 1$ | $SQ_{Trat}$ | $\frac{SQ_{Trat}}{a-1}$ | $\frac{QMTrat}{QMRes}$ | $F(\alpha;GL_{Trat} ;GL_{Res})$
+resíduo       | $a(b-1)$| $SQ_{Res}$  |$SQRes$                  | -                      |
+Total         | $ab-1$  |$SQ_{Total}$ | -                       | -                      |
+
+<center>
+
+**Correção**
+
+$C = \frac{(\sum Y_{ij})^2}{ij}$
+
+**Soma de Quadrados Total**
+
+$SQ_{Total}=\sum Y_{ij}^2-C$
+
+**Soma de Quadrados Tratamento**
+
+$SQ_{Tratamento}=\frac{1}{J}\sum Y_{i}^2-C$
+
+**Soma de Quadrados do resíduo**
+
+$SQ_{Resíduo} = SQ_{Total} - SQ_{Tratamento}$
+
+**Quadrado Médio do Tratamento**
+
+$QM_{Tratamento} = \frac{SQ_{Tratamento}}{GL_{Tratamento}}$
+
+**Quadrado Médio do Resíduo**
+
+$QM_{Resíduo} = \frac{SQ_{Resíduo}}{GL_{Resíduo}}$
+
+**F calculado**
+
+$F_{Calculado}=\frac{QM_{Tratamento}}{QM_{Resíduo}}$
+
+</center>
+
+<br><br>
+
+## DIC
 
 Considere o seguinte conjunto de dados:
 
 ```{r}
 rm(list=ls())
 data(pomegranate)
-attach(pomegranate)
 ```
 
-### default
+#### default
 
 Por *default*, o AgroR realiza a análise de variância, teste de normalidade dos erros de Shapiro-Wilk, teste de homogeneidade das variâncias de Bartlett, teste de independência dos erros de Durbin-Watson, teste de comparação múltipla de Tukey e o gráfico de colunas.
 
 ```{r}
-DIC(trat, WL)
+with(pomegranate, DIC(trat, WL))
 ```
 
-### Alterando teste de médias
+#### Alterando teste de médias
 
 Para alterar o teste de médias, é necessário alterar o argumento `mcomp`.
 
 ```{r,results='hide',fig.show='hide',message=FALSE,warning=FALSE}
-DIC(trat, WL) # tukey
-DIC(trat, WL, mcomp = "sk") # Scott-Knott
-DIC(trat, WL, mcomp = "duncan") # Duncan
-DIC(trat, WL, mcomp = "lsd") # LSD
+with(pomegranate, DIC(trat, WL)) # tukey
+with(pomegranate, DIC(trat, WL, mcomp = "sk")) # Scott-Knott
+with(pomegranate, DIC(trat, WL, mcomp = "duncan")) # Duncan
+with(pomegranate, DIC(trat, WL, mcomp = "lsd")) # LSD
 ```
 
-### Alterando para teste não-paramétrico de Kruskal-Wallis
+
+****
+
+## Transformando dados
+
+****
+
+- O modelo de Análise de Variância pressupõe que exista homocedasticidade, ou seja, que os tratamentos apresentem a mesma variabilidade;
+- Algumas vezes este pressuposto pode não ser atendido e assim, para corrigir este problema existe uma saída por vezes bastante simples que é a transformação de dados;
+- Esta técnica consiste na utilização de um artifício matemático para tornar o modelo de ANOVA válido.
+
+##### Heterogeneidade Irregular
+
+- Ocorre quando alguns tratamentos apresentam maior variabilidade do que outros, contudo, não existe uma associação entre média e variância;
+
+- Neste caso, não há uma transformação matemática que elimine esta variabilidade.
+
+Solução:
+
+* Modelos Lineares Generalizados;
+
+* Análise não paramétrica.
+
+<br>
+
+##### Heterogeneidade Regular
+
+- Acontece quando existe alguma associação entre as médias dos tratamentos e a variância;
+- A heterocedasticidade regular está associada é falta de normalidade do erros;
+
+Solução:
+
+* Transformação dos dados;
+
+* Modelos Lineares Generalizados;
+
+* Análise não paramétrica.
+
+<br>
+
+****
+
+##### Princípio de transformação
+
+****
+
+<br>
+
+Seja $E(Y) = \mu$ a média de Y e suponha que o desvio padrão de Y é proporcional a potência da média de Y tal que:
+
+<center>
+
+$\sigma Y \alpha \mu^\alpha.$
+
+</center>
+
+O objetivo é encontrar uma transformação de $Y$ que gere uma variância constante.
+
+Suponha que a transformação é uma potência dos dados originais, isto é:
+
+<center>
+
+$Y^*=Y^\lambda$
+
+</center>
+
+Assim, pode ser mostrado que:
+
+<center>
+
+$\sigma Y^* \alpha \mu^{\lambda+ \alpha-1}.$
+
+</center>
+
+Caso $\lambda = 1-\alpha$, então a variância dos dados transformados $Y^*$ é constante, mostrando que **não é necessário transformação**.
+
+Algumas das transformações mais comuns são:
+
+<br>
+
+<center>
+
+| $\lambda$ | Transformação       |
+|:-----------:|:---------------------:|
+| 1         | Nenhuma             |
+| 0,5       | $\sqrt{y}$          |
+| 0         | log(y)              |
+| -0,5      | $\frac{1}{\sqrt{y}}$ |
+| -1        | $\frac{1}{y}$         |
+
+</center>
+
+Box & Cox (1964) mostraram como o parâmetro de transformação $\lambda$ em $Y^* = Y^\lambda$ pode ser estimado simultaneamente com outros parâmetros do modelo (média geral e efeitos de tratamentos) usando o método de máxima verossimilhança. O procedimento consiste em realizar, para vários valores de $\lambda$, uma análise de variância padrão sobre:
+
+$$Y_i(\lambda) = \left\{ \begin{array}{ll} \ln(X_i),~~~~~~\textrm{se $\lambda = 0$,} \\ \\ \dfrac{X_i^{\lambda} - 1}{\lambda},~~~~\textrm{se $\lambda \neq 0$,}\end{array} \right.$$
+
+A estimativa de máxima verossimilhança de $\lambda$ é o valor para o qual a soma de quadrado do resíduo, SQRes($\lambda$), é mínima.
+
+Este valor de $\lambda$ é encontrado através do gráfico de SQRes($\lambda$) *versus* $\lambda$, sendo que $\lambda$ é o valor que minimiza a SQRes($\lambda$).
+
+Ou, ainda, o valor de $\lambda$ que maximiza a função de logverossimilhança.
+
+<br>
+
+Um intervalo de confiança $100(1-\alpha)$% para $\lambda$ pode ser encontrado calculando-se:
+
+<center>
+
+$IC(\lambda) = SQRes(\lambda)(1 \pm \frac{t2^2/2=2;v }{v})$
+
+</center>
+
+em que $v$ é o número de graus de liberdade.
+
+Se o intervalo de confiança incluir o valor $\lambda = 1$, isto quer dizer que não é necessário transformar os dados.
+
+No pacote AgroR, o argumento `transf` define a transformação solicitada, conforme a seguir:
 
 ```{r}
-DIC(trat, WL, test = "noparametric",geom="point")
+with(pomegranate, DIC(trat, WL, transf = 0))
 ```
 
-### Transformando dados
-
-O argumento `transf` define a transformação solicitada.
+## Kruskal-Wallis
 
 ```{r}
-DIC(trat, WL, transf = 0)
+with(pomegranate, DIC(trat, WL, test = "noparametric", geom="point"))
 ```
 
-### Alterando parâmetros gráficos
+#### Alterando parâmetros gráficos
 
 ```{r,results='hide',fig.show='hide',message=FALSE,warning=FALSE}
-DIC(trat, WL, geom="point") # tipo de gráfico
-DIC(trat, WL, ylab = "Weight loss (%)", xlab="Treatments") # nome de eixos
+with(pomegranate, DIC(trat, WL, geom="point")) # tipo de gráfico
+with(pomegranate, DIC(trat, WL, 
+                      ylab = "Weight loss (%)", 
+                      xlab="Treatments")) # nome de eixos
 ```
 
-### Para fator quantitativo
+## Fator Quantitativo
 
 ```{r}
 rm(list=ls())
@@ -104,9 +344,98 @@ data("phao")
 with(phao, DIC(dose,comp,quali=FALSE,grau=2))
 ```
 
-## Delineamento em blocos casualizados
+# Delineamento em blocos casualizados
 
-Os argumentos para DBC e DQL são muito similares a função DIC. A diferença está apenas na inserção do argumento `block` e da alteração do teste não-paramétrico para Friedman.
+****
+
+## Teoria
+
+****
+
+<br><br>
+
+- O delineamento em blocos ao acaso ou o delineamento em blocos casualizados são aqueles que levam em consideração os 3 princípios básicos da experimentação;
+- O controle local é feito na sua forma mais simples e é chamado de blocos;
+- Sempre que não houver homogeneidade das condições experimentais, deve-se utilizar o princípio do controle local;
+- Estabelece-se, então, sub-ambientes homogêneos (blocos) e instalando, em cada um deles, todos os tratamentos, igualmente repetidos;
+- Nessas condições, o delineamento em blocos casualizados é mais eficiente que o inteiramente ao acaso e, essa eficiência depende da uniformidade das parcelas de cada bloco;
+- Pode-se haver diferenças bem acentuadas de um bloco para outro.
+- O número de blocos e de repetições coincide apenas quando os tratamentos ocorrem uma única vez em cada bloco.
+
+<br><br>
+
+
+****
+
+### Vantagens
+
+****
+
+<br>
+
+- Controla as diferenças que ocorrem nas condições ambientais, de um bloco para outro;
+- Conduz a uma estimativa mais exata para a variância residual, uma vez que a variação ambiental entre blocos é isolada.
+
+****
+
+### Desvantagens
+
+****
+
+<br>
+
+- Pela utilização do princípio do controle local, há uma redução no número de graus de liberdade do resíduo;
+- Exigência de homogeneidade das parcelas dentro de cada bloco limita o número de tratamentos, que não pode ser muito elevado.
+
+<br>
+
+****
+
+### Modelo matemático 
+
+****
+
+<br>
+
+\begin{eqnarray}
+y_{ji}=\mu+\tau_i+\beta_j+\varepsilon_{ij}
+\end{eqnarray}
+
+$y_{ji}$: é a observação referente ao tratamento i no bloco j;
+
+$\mu$: é a média geral (ou constante comum a todas as observações);
+
+$\tau_i$: é o efeito de tratamento, com $i = 1, 2, . . . , I$;
+
+$\beta_j$: é o efeito do bloco;
+
+$\varepsilon_{ij}$: é o erro experimental, tal que $\varepsilon_{ij}$~N(0; $\sigma^2$).
+
+****
+
+### Hipóteses e Modelo 
+
+****
+
+\begin{eqnarray*}
+\left\{
+\begin{array}{ll}
+H_0: & \mu_1 = \mu_2 =\mu_i\\[.2cm]
+H_1: & \mu_i \neq \mu_i' \qquad i \neq i'.
+\end{array}
+\right.
+\end{eqnarray*}
+
+CV            | G.L.    |S.Q.         |Q.M.                     |  Fcalc                 | Ftab
+--------------:|:---------:|:-------------:|:-------------------------:|:------------------------:|:----------------------------------
+Tratamentos   | $a - 1$ | $SQ_{Trat}$ | $\frac{SQ_{Trat}}{a-1}$ | $\frac{QMTrat}{QMRes}$ | $F(\alpha;GL_{Trat} ;GL_{Res})$
+Blocos        | $b-1$   | $Sq_{Blocos}$|$\frac{SQ_{Blocos}}{b-1}$|$\frac{QM_{bloco}}{QM_{Res}}$ | $F(\alpha;GL_{bloco} ;GL_{Res})$
+resíduo       | $(a-1)(b-1)$| $SQ_{Res}$  |$\frac{SQRes}{(a-1)(b-1)}$                  | -                      |
+Total         | $ab-1$  |$SQ_{Total}$ | -                       | -                      |
+
+<br>
+
+No pacote AgroR, os argumentos para DBC e DQL são muito similares a função DIC. A diferença está apenas na inserção do argumento `block` e da alteração do teste não-paramétrico para Friedman.
 
 ```{r}
 rm(list=ls())
@@ -115,13 +444,84 @@ with(laranja, DBC(trat, bloco, resp,angle=45,
                   ylab = "Number of fruits/plants"))
 ```
 
-### Teste de Friedman
+## Teste de Friedman
 
 ```{r}
 with(laranja, DBC(trat, bloco, resp, test="noparametric"))
 ```
 
-## Delineamento em quadrado latino
+# Delineamento em quadrado latino
+
+<br><br>
+
+****
+
+## Teoria
+
+****
+
+- Na sessão de delineamento em blocos ao acaso, observamos que o mesmo é usado para reduzir o erro residual de um experimento utilizando o princípio do controle local;
+- No Delineamento em Quadrado Latino, além dos princípios da repetição e da casualização, o princípio do controle local é utilizado duas vezes para controlar o efeito de dois fatores;
+- Para controlar esta variabilidade, é necessário dividir as unidades experimentais em blocos homogêneos de unidades experimentais em relação a cada fator controlado.
+- O número de blocos para cada fator controlado deve ser igual ao número de tratamentos.
+Uma vez formados os blocos, distribui-se os tratamentos ao acaso com a restrição que cada tratamento seja designado uma única vez em cada um dos blocos dos dois fatores controlados.
+- Os níveis de um fator controlado são identificados por linhas em uma tabela de dupla entrada e os níveis do outro fator controlado são identificados por colunas na tabela.
+- A grande restrição dos ensaios em quadrados latinos é que para 2, 3 ou 4 tratamentos teremos apenas 0, 2 ou 6 g.l., respectivamente,para o resíduo.
+- Por outro lado, com 9 ou mais tratamentos, o quadrado latino fica muito grande, trazendo dificuldades na instalação, pois, para 9 tratamentos, teremos 81 parcelas.
+- Por isso, os quadrados latinos mais usados são os de 5 x 5, 6 x 6, 7 x 7 e 8 x 8.
+
+<br>
+
+****
+
+### Modelo matemático 
+
+****
+
+\begin{eqnarray}
+y_{ji}=\mu+\tau_i+\alpha_j+\beta_k+\varepsilon_{ij}
+\end{eqnarray}
+
+$y_{ji}$: é o valor observado na i-ésima linha e k-ésima coluna para o j-ésimo tratamento;
+
+$\mu$: é a média geral (ou constante comum a todas as observações);
+
+$\tau_i$: é o efeito de tratamento, com $i = 1, 2, . . . , I$;
+
+$\beta_j$: é o efeito da k-ésima coluna;
+
+$\alpha_j$: é efeito da j-ésima linha
+
+$\varepsilon_{ij}$: é o erro experimental, tal que $\varepsilon_{ij}$~N(0; $\sigma^2$).
+
+**O modelo é completamente aditivo, ou seja, não há interação entre linhas, colunas e tratamentos.**
+
+****
+
+### Hipóteses e Modelo 
+
+****
+
+\begin{eqnarray*}
+\left\{
+\begin{array}{ll}
+H_0: & \mu_1 = \mu_2 =\mu_i\\[.2cm]
+H_1: & \mu_i \neq \mu_i' \qquad i \neq i'.
+\end{array}
+\right.
+\end{eqnarray*}
+
+CV            | G.L.        |S.Q.        |Q.M.                      |  Fcalc                  | Ftab
+--------------:|:-------------:|:------------:|:--------------------------:|:-------------------------:|:----------------------------------:
+Tratamentos   | $p - 1$     |$SQ_{Trat}$ |$\frac{SQ_{Trat}}{p-1}$   |$\frac{QMTrat}{QMRes}$   | $F(\alpha;GL_{Trat} ;GL_{Res})$
+Linhas        | $p - 1$     |$SQ_{L}$    |$\frac{SQ_{L}}{p-1}$      |$\frac{QM_{L}}{QM_{Res}}$| $F(\alpha;GL_{L} ;GL_{Res})$
+Colunas       | $p - 1$     |$SQ_{C}$    |$\frac{SQ_{C}}{p-1}$      |$\frac{QM_{C}}{QM_{Res}}$| $F(\alpha;GL_{C} ;GL_{Res})$
+resíduo       | $(p-2)(p-1)$|$SQ_{Res}$  |$\frac{SQRes}{(p-2)(p-1)}$|                         |
+Total         | $p^2-1$     |$SQ_{Total}$|                          |                         |
+
+<br><br>
+
+No AgroR, podemos realizar a análise de um experimento em quadrado latino pelo seguinte comando:
 
 ```{r}
 rm(list=ls())
@@ -129,7 +529,7 @@ data(porco)
 with(porco,DQL(trat, linhas, colunas, resp))
 ```
 
-## DIC e DBC por glm
+# DIC e DBC por glm
 
 ```{r}
 rm(list=ls())

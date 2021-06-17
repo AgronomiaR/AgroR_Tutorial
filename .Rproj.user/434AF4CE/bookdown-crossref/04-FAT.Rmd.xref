@@ -1,10 +1,23 @@
 h1:esquema-fatoria-duplo Esquema fatoria duplo
+h2:teoria Teoria
+h3:tipos-de-efeitos-avaliados Tipos de efeitos avaliados
+h3:vantagens Vantagens
+h3:desvantagens Desvantagens
+h3:modelo-estatístico Modelo estatístico
+h3:hipóteses-e-quadro-da-análise-de-variância Hipóteses e quadro da análise de variância
 h2:fat2dic FAT2DIC
 h2:fat2dbc FAT2DBC
 h2:fat2dic.ad FAT2DIC.ad
 h2:fat2dbc.ad FAT2DBC.ad
 h2:fat2dic.art FAT2DIC.art
 h2:fat2dbc.art FAT2DBC.art
+h1:fatorial-triplo Fatorial triplo
+h2:teoria-1 Teoria
+h3:tipos-de-efeitos-avaliados-1 Tipos de efeitos avaliados
+h3:vantagens-1 Vantagens
+h3:desvantagens-1 Desvantagens
+h3:modelo-estatístico-1 Modelo estatístico
+h3:hipóteses-e-modelo Hipóteses e modelo
 h2:fat3dic FAT3DIC
 h2:fat3dbc FAT3DBC
 

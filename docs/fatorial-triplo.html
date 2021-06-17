@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 10 Fatorial triplo | AgroR</title>
+  <meta name="description" content="Capítulo 10 Fatorial triplo | AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 10 Fatorial triplo | AgroR" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Capítulo 10 Fatorial triplo | AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 10 Fatorial triplo | AgroR" />
+  
+  <meta name="twitter:description" content="Capítulo 10 Fatorial triplo | AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
+  
+
+<meta name="author" content="Gabriel Danilo Shimizu" />
+
+
+<meta name="date" content="2021-06-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="esquema-fatoria-duplo.html"/>
+<link rel="next" href="parcela-subdividida.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introdução ao pacote AgroR</a></li>
+<center><img src="https://raw.githubusercontent.com/cran/AgroR/master/man/figures/logo.png" width="120" height="140" ></center>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introdução</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#descrições-gerais"><i class="fa fa-check"></i><b>1.1</b> Descrições gerais</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#lista-de-funções"><i class="fa fa-check"></i><b>1.2</b> Lista de funções</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#conjunto-de-dados"><i class="fa fa-check"></i><b>1.2.1</b> Conjunto de dados</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#funções-para-análise-exploratória-dos-dados"><i class="fa fa-check"></i><b>1.2.2</b> Funções para análise exploratória dos dados</a></li>
+<li class="chapter" data-level="1.2.3" data-path="index.html"><a href="index.html#funções-de-análise"><i class="fa fa-check"></i><b>1.2.3</b> Funções de análise</a></li>
+<li class="chapter" data-level="1.2.4" data-path="index.html"><a href="index.html#gráficos"><i class="fa fa-check"></i><b>1.2.4</b> Gráficos</a></li>
+<li class="chapter" data-level="1.2.5" data-path="index.html"><a href="index.html#funções-úteis"><i class="fa fa-check"></i><b>1.2.5</b> Funções úteis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introdução</a></li>
+<li class="chapter" data-level="3" data-path="análise-descritiva.html"><a href="análise-descritiva.html"><i class="fa fa-check"></i><b>3</b> Análise descritiva</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="análise-descritiva.html"><a href="análise-descritiva.html#um-fator"><i class="fa fa-check"></i><b>3.1</b> Um fator</a></li>
+<li class="chapter" data-level="3.2" data-path="análise-descritiva.html"><a href="análise-descritiva.html#dois-fatores"><i class="fa fa-check"></i><b>3.2</b> Dois fatores</a></li>
+<li class="chapter" data-level="3.3" data-path="análise-descritiva.html"><a href="análise-descritiva.html#três-fatores"><i class="fa fa-check"></i><b>3.3</b> Três fatores</a></li>
+<li class="chapter" data-level="3.4" data-path="análise-descritiva.html"><a href="análise-descritiva.html#dispvar"><i class="fa fa-check"></i><b>3.4</b> dispvar</a></li>
+<li class="chapter" data-level="3.5" data-path="análise-descritiva.html"><a href="análise-descritiva.html#tabledesc"><i class="fa fa-check"></i><b>3.5</b> tabledesc</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html"><i class="fa fa-check"></i><b>4</b> Delineamento Inteiramente Casualizado</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html#teoria"><i class="fa fa-check"></i><b>4.1</b> Teoria</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html#vantagens"><i class="fa fa-check"></i><b>4.1.1</b> Vantagens</a></li>
+<li class="chapter" data-level="4.1.2" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html#desvantagens"><i class="fa fa-check"></i><b>4.1.2</b> Desvantagens</a></li>
+<li class="chapter" data-level="4.1.3" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html#modelo-matemático-para-dic"><i class="fa fa-check"></i><b>4.1.3</b> Modelo matemático para DIC</a></li>
+<li class="chapter" data-level="4.1.4" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html#hipóteses-e-modelo"><i class="fa fa-check"></i><b>4.1.4</b> Hipóteses e Modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html#dic"><i class="fa fa-check"></i><b>4.2</b> DIC</a></li>
+<li class="chapter" data-level="4.3" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html#transformando-dados"><i class="fa fa-check"></i><b>4.3</b> Transformando dados</a></li>
+<li class="chapter" data-level="4.4" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html#kruskal-wallis"><i class="fa fa-check"></i><b>4.4</b> Kruskal-Wallis</a></li>
+<li class="chapter" data-level="4.5" data-path="delineamento-inteiramente-casualizado.html"><a href="delineamento-inteiramente-casualizado.html#fator-quantitativo"><i class="fa fa-check"></i><b>4.5</b> Fator Quantitativo</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="delineamento-em-blocos-casualizados.html"><a href="delineamento-em-blocos-casualizados.html"><i class="fa fa-check"></i><b>5</b> Delineamento em blocos casualizados</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="delineamento-em-blocos-casualizados.html"><a href="delineamento-em-blocos-casualizados.html#teoria-1"><i class="fa fa-check"></i><b>5.1</b> Teoria</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="delineamento-em-blocos-casualizados.html"><a href="delineamento-em-blocos-casualizados.html#vantagens-1"><i class="fa fa-check"></i><b>5.1.1</b> Vantagens</a></li>
+<li class="chapter" data-level="5.1.2" data-path="delineamento-em-blocos-casualizados.html"><a href="delineamento-em-blocos-casualizados.html#desvantagens-1"><i class="fa fa-check"></i><b>5.1.2</b> Desvantagens</a></li>
+<li class="chapter" data-level="5.1.3" data-path="delineamento-em-blocos-casualizados.html"><a href="delineamento-em-blocos-casualizados.html#modelo-matemático"><i class="fa fa-check"></i><b>5.1.3</b> Modelo matemático</a></li>
+<li class="chapter" data-level="5.1.4" data-path="delineamento-em-blocos-casualizados.html"><a href="delineamento-em-blocos-casualizados.html#hipóteses-e-modelo-1"><i class="fa fa-check"></i><b>5.1.4</b> Hipóteses e Modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="delineamento-em-blocos-casualizados.html"><a href="delineamento-em-blocos-casualizados.html#teste-de-friedman"><i class="fa fa-check"></i><b>5.2</b> Teste de Friedman</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="delineamento-em-quadrado-latino.html"><a href="delineamento-em-quadrado-latino.html"><i class="fa fa-check"></i><b>6</b> Delineamento em quadrado latino</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="delineamento-em-quadrado-latino.html"><a href="delineamento-em-quadrado-latino.html#teoria-2"><i class="fa fa-check"></i><b>6.1</b> Teoria</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="delineamento-em-quadrado-latino.html"><a href="delineamento-em-quadrado-latino.html#modelo-matemático-1"><i class="fa fa-check"></i><b>6.1.1</b> Modelo matemático</a></li>
+<li class="chapter" data-level="6.1.2" data-path="delineamento-em-quadrado-latino.html"><a href="delineamento-em-quadrado-latino.html#hipóteses-e-modelo-2"><i class="fa fa-check"></i><b>6.1.2</b> Hipóteses e Modelo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="dic-e-dbc-por-glm.html"><a href="dic-e-dbc-por-glm.html"><i class="fa fa-check"></i><b>7</b> DIC e DBC por glm</a></li>
+<li class="chapter" data-level="8" data-path="dict-dbct-e-dqlt.html"><a href="dict-dbct-e-dqlt.html"><i class="fa fa-check"></i><b>8</b> DICT, DBCT e DQLT</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="dict-dbct-e-dqlt.html"><a href="dict-dbct-e-dqlt.html#dict"><i class="fa fa-check"></i><b>8.1</b> DICT</a></li>
+<li class="chapter" data-level="8.2" data-path="dict-dbct-e-dqlt.html"><a href="dict-dbct-e-dqlt.html#dbct"><i class="fa fa-check"></i><b>8.2</b> DBCT</a></li>
+<li class="chapter" data-level="8.3" data-path="dict-dbct-e-dqlt.html"><a href="dict-dbct-e-dqlt.html#dqlt"><i class="fa fa-check"></i><b>8.3</b> DQLT</a></li>
+<li class="chapter" data-level="8.4" data-path="dict-dbct-e-dqlt.html"><a href="dict-dbct-e-dqlt.html#tbarplot.reverse"><i class="fa fa-check"></i><b>8.4</b> TBARPLOT.reverse</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html"><i class="fa fa-check"></i><b>9</b> Esquema fatoria duplo</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#teoria-3"><i class="fa fa-check"></i><b>9.1</b> Teoria</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#tipos-de-efeitos-avaliados"><i class="fa fa-check"></i><b>9.1.1</b> Tipos de efeitos avaliados</a></li>
+<li class="chapter" data-level="9.1.2" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#vantagens-2"><i class="fa fa-check"></i><b>9.1.2</b> Vantagens</a></li>
+<li class="chapter" data-level="9.1.3" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#desvantagens-2"><i class="fa fa-check"></i><b>9.1.3</b> Desvantagens</a></li>
+<li class="chapter" data-level="9.1.4" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#modelo-estatístico"><i class="fa fa-check"></i><b>9.1.4</b> Modelo estatístico</a></li>
+<li class="chapter" data-level="9.1.5" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#hipóteses-e-quadro-da-análise-de-variância"><i class="fa fa-check"></i><b>9.1.5</b> Hipóteses e quadro da análise de variância</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat2dic"><i class="fa fa-check"></i><b>9.2</b> FAT2DIC</a></li>
+<li class="chapter" data-level="9.3" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat2dbc"><i class="fa fa-check"></i><b>9.3</b> FAT2DBC</a></li>
+<li class="chapter" data-level="9.4" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat2dic.ad"><i class="fa fa-check"></i><b>9.4</b> FAT2DIC.ad</a></li>
+<li class="chapter" data-level="9.5" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat2dbc.ad"><i class="fa fa-check"></i><b>9.5</b> FAT2DBC.ad</a></li>
+<li class="chapter" data-level="9.6" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat2dic.art"><i class="fa fa-check"></i><b>9.6</b> FAT2DIC.art</a></li>
+<li class="chapter" data-level="9.7" data-path="esquema-fatoria-duplo.html"><a href="esquema-fatoria-duplo.html#fat2dbc.art"><i class="fa fa-check"></i><b>9.7</b> FAT2DBC.art</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="fatorial-triplo.html"><a href="fatorial-triplo.html"><i class="fa fa-check"></i><b>10</b> Fatorial triplo</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="fatorial-triplo.html"><a href="fatorial-triplo.html#teoria-4"><i class="fa fa-check"></i><b>10.1</b> Teoria</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="fatorial-triplo.html"><a href="fatorial-triplo.html#tipos-de-efeitos-avaliados-1"><i class="fa fa-check"></i><b>10.1.1</b> Tipos de efeitos avaliados</a></li>
+<li class="chapter" data-level="10.1.2" data-path="fatorial-triplo.html"><a href="fatorial-triplo.html#vantagens-3"><i class="fa fa-check"></i><b>10.1.2</b> Vantagens</a></li>
+<li class="chapter" data-level="10.1.3" data-path="fatorial-triplo.html"><a href="fatorial-triplo.html#desvantagens-3"><i class="fa fa-check"></i><b>10.1.3</b> Desvantagens</a></li>
+<li class="chapter" data-level="10.1.4" data-path="fatorial-triplo.html"><a href="fatorial-triplo.html#modelo-estatístico-1"><i class="fa fa-check"></i><b>10.1.4</b> Modelo estatístico</a></li>
+<li class="chapter" data-level="10.1.5" data-path="fatorial-triplo.html"><a href="fatorial-triplo.html#hipóteses-e-modelo-3"><i class="fa fa-check"></i><b>10.1.5</b> Hipóteses e modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="fatorial-triplo.html"><a href="fatorial-triplo.html#fat3dic"><i class="fa fa-check"></i><b>10.2</b> FAT3DIC</a></li>
+<li class="chapter" data-level="10.3" data-path="fatorial-triplo.html"><a href="fatorial-triplo.html#fat3dbc"><i class="fa fa-check"></i><b>10.3</b> FAT3DBC</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="parcela-subdividida.html"><a href="parcela-subdividida.html"><i class="fa fa-check"></i><b>11</b> Parcela subdividida</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="parcela-subdividida.html"><a href="parcela-subdividida.html#teoria-5"><i class="fa fa-check"></i><b>11.1</b> Teoria</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="parcela-subdividida.html"><a href="parcela-subdividida.html#vantagens-4"><i class="fa fa-check"></i><b>11.1.1</b> Vantagens</a></li>
+<li class="chapter" data-level="11.1.2" data-path="parcela-subdividida.html"><a href="parcela-subdividida.html#desvantagens-4"><i class="fa fa-check"></i><b>11.1.2</b> Desvantagens</a></li>
+<li class="chapter" data-level="11.1.3" data-path="parcela-subdividida.html"><a href="parcela-subdividida.html#modelo-estatístico-2"><i class="fa fa-check"></i><b>11.1.3</b> Modelo estatístico</a></li>
+<li class="chapter" data-level="11.1.4" data-path="parcela-subdividida.html"><a href="parcela-subdividida.html#hipóteses-e-modelo-4"><i class="fa fa-check"></i><b>11.1.4</b> Hipóteses e modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="parcela-subdividida.html"><a href="parcela-subdividida.html#psubdic"><i class="fa fa-check"></i><b>11.2</b> PSUBDIC</a></li>
+<li class="chapter" data-level="11.3" data-path="parcela-subdividida.html"><a href="parcela-subdividida.html#psubdbc"><i class="fa fa-check"></i><b>11.3</b> PSUBDBC</a></li>
+<li class="chapter" data-level="11.4" data-path="parcela-subdividida.html"><a href="parcela-subdividida.html#psubsubdbc"><i class="fa fa-check"></i><b>11.4</b> PSUBSUBDBC</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="análise-conjunta.html"><a href="análise-conjunta.html"><i class="fa fa-check"></i><b>12</b> Análise conjunta</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="análise-conjunta.html"><a href="análise-conjunta.html#teoria-6"><i class="fa fa-check"></i><b>12.1</b> Teoria</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AgroR</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="fatorial-triplo" class="section level1" number="10">
+<h1><span class="header-section-number">Capítulo 10</span> Fatorial triplo</h1>
+<p><br><br></p>
+<hr />
+<div id="teoria-4" class="section level2" number="10.1">
+<h2><span class="header-section-number">10.1</span> Teoria</h2>
+<hr />
+<p>Nos experimentos mais simples comparamos níveis (tratamentos) de apenas um fator; entretanto, existem casos em que dois ou mais fatores devem ser estudados simultaneamente para que possam nos conduzir a resultados de interesse;</p>
+<p>Em geral, os experimentos fatoriais são mais eficientes para este tipo de experimento, pois estudam, ao mesmo tempo, os efeitos de dois ou mais fatores, cada um deles com dois ou mais níveis.</p>
+<p>O fatorial é um tipo de esquema, ou seja, uma das maneiras de organizar os tratamentos e não um tipo de delineamento;</p>
+<p>Os experimentos fatoriais são montados segundo um tipo de delineamento experimental;</p>
+<p>Nos experimentos fatoriais, os tratamentos são obtidos pelas combinações dos níveis dos fatores.</p>
+<p><br></p>
+<hr />
+<div id="tipos-de-efeitos-avaliados-1" class="section level3" number="10.1.1">
+<h3><span class="header-section-number">10.1.1</span> Tipos de efeitos avaliados</h3>
+<hr />
+<p><br></p>
+<ul>
+<li><p>Efeito Principal: é o efeito de cada fator, independente do efeito dos outros fatores;</p></li>
+<li><p>Efeito de Interação: é o efeito simultâneo dos fatores sobre a variável em estudo. Dizemos que ocorre interação entre os fatores quando os efeitos dos níveis de um fator são modificados pelos níveis do outro fator.</p></li>
+</ul>
+<p><br></p>
+<hr />
+</div>
+<div id="vantagens-3" class="section level3" number="10.1.2">
+<h3><span class="header-section-number">10.1.2</span> Vantagens</h3>
+<hr />
+<p><br></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Pode-se estudar dois ou mais fatores num único experimento.</p></li>
+<li><p>Pode-se, por meio dos efeitos das interações, verificar se um fator é independente ou dependente do(s) outro(s).</p></li>
+</ol>
+<hr />
+</div>
+<div id="desvantagens-3" class="section level3" number="10.1.3">
+<h3><span class="header-section-number">10.1.3</span> Desvantagens</h3>
+<hr />
+<p><br></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>O número de tratamentos ou combinações de níveis de fatores cresce, rapidamente, com o aumento do número de níveis, em cada fator, ou mesmo com o aumento do número de fatores.</p></li>
+<li><p>A interpretação dos resultados se torna mais difícil é medida que aumentamos o número de níveis e de fatores no experimento.</p></li>
+</ol>
+<p><br></p>
+<hr />
+</div>
+<div id="modelo-estatístico-1" class="section level3" number="10.1.4">
+<h3><span class="header-section-number">10.1.4</span> Modelo estatístico</h3>
+<hr />
+<p><br></p>
+<p>As observações podem ser descritas pelo modelo estatístico linear:</p>
+<center>
+<p><span class="math inline">\(y_{ijk} = \mu+\beta_{1i}+\beta_{2j}+\beta_{3k}+(\beta_1\beta_2)_{ij}+(\beta_1\beta_3)_{ik}+(\beta_2\beta_3)_{jk}+(\beta_1\beta_2\beta_3)_{ijk}+\epsilon_{ijk}\)</span></p>
+</center>
+<ul>
+<li>i = 1; 2; : : : ; a</li>
+<li>j = 1; 2; : : : ; b</li>
+<li>k = 1; 2; : : : ; c</li>
+</ul>
+<p>em que:</p>
+<ul>
+<li><span class="math inline">\(y_{ijk}\)</span> é o valor observado no i-ésimo nível do fator A, j-ésima nível do fator B e k-ésimo nível do fator C;</li>
+<li><span class="math inline">\(\mu\)</span> é uma constante;</li>
+<li><span class="math inline">\(\beta_{1i}\)</span> é o efeito do i-ésimo nível do fator A;</li>
+<li><span class="math inline">\(\beta_{2j}\)</span> é o efeito do j-ésimo nível do fator B;</li>
+<li><span class="math inline">\(\beta_{3k}\)</span> é o efeito do j-ésimo nível do fator C;</li>
+<li><span class="math inline">\((\beta_1\beta_2)_ij\)</span> é o efeito da interação entre <span class="math inline">\(\beta_{1i}\)</span> e <span class="math inline">\(\beta_{2j}\)</span>;</li>
+<li><span class="math inline">\((\beta_1\beta_3)_ik\)</span> é o efeito da interação entre <span class="math inline">\(\beta_{1i}\)</span> e <span class="math inline">\(\beta_{3j}\)</span>;</li>
+<li><span class="math inline">\((\beta_2\beta_3)_jk\)</span> é o efeito da interação entre <span class="math inline">\(\beta_{2i}\)</span> e <span class="math inline">\(\beta_{3j}\)</span>;</li>
+<li><span class="math inline">\((\beta_1\beta_2\beta_3)_{ijk}\)</span> é o efeito da interação entre <span class="math inline">\(\beta_{1i}\)</span>, <span class="math inline">\(\beta_{2j}\)</span> e <span class="math inline">\(\beta_{3k}\)</span>;</li>
+<li><span class="math inline">\((\epsilon)ijk\)</span> é o componente de erro aleatório.</li>
+</ul>
+<p><br></p>
+<hr />
+</div>
+<div id="hipóteses-e-modelo-3" class="section level3" number="10.1.5">
+<h3><span class="header-section-number">10.1.5</span> Hipóteses e modelo</h3>
+<hr />
+<p><br></p>
+<p>No experimento fatorial com 3 fatores, deseja-se testar a signicância de ambos os fatores.</p>
+<p>No experimento fatorial com 2 fatores, deseja-se testar a signicância de ambos os fatores.</p>
+<p>Há interesse em testar hipóteses sobre a igualdade dos efeitos do fator A, isto é:</p>
+<ul>
+<li>H0 : <span class="math inline">\(\beta_{11}\)</span> = <span class="math inline">\(\beta_{12}\)</span> = : : : <span class="math inline">\(\beta_{1a}\)</span> = 0</li>
+<li>H1 : Pelo menos um <span class="math inline">\(\beta_{1i} \neq 0\)</span></li>
+</ul>
+<p>e a igualdade nos efeitos do fator B, ou seja:</p>
+<ul>
+<li>H0 : <span class="math inline">\(\beta_{21}\)</span> = <span class="math inline">\(\beta_{22}\)</span> = : : : <span class="math inline">\(\beta_{2b}\)</span> = 0</li>
+<li>H1 : Pelo menos um <span class="math inline">\(\beta_{2j} \neq 0\)</span></li>
+</ul>
+<p>e, ainda, se há interação entre os fatores A e B:</p>
+<ul>
+<li>H0 : <span class="math inline">\((\beta_1\beta_2)_{ij}\)</span> = 0 para todo i ; j</li>
+<li>H1 : Pelo menos um <span class="math inline">\((\beta_1\beta_2)_{ij} \neq 0\)</span></li>
+</ul>
+<p>e, ainda, se há interação entre os fatores A e C:</p>
+<ul>
+<li>H0 : <span class="math inline">\((\beta_1\beta_3)_{ik}\)</span> = 0 para todo i ; k</li>
+<li>H1 : Pelo menos um <span class="math inline">\((\beta_1\beta_3)_{ik} \neq 0\)</span></li>
+</ul>
+<p>e, ainda, se há interação entre os fatores B e C:</p>
+<ul>
+<li>H0 : <span class="math inline">\((\beta_2\beta_3)_{jk}\)</span> = 0 para todo j ; k</li>
+<li>H1 : Pelo menos um <span class="math inline">\((\beta_2\beta_3)_{jk} \neq 0\)</span></li>
+</ul>
+<p>e, ainda, se há interação entre os fatores A e B e C:</p>
+<ul>
+<li>H0 : <span class="math inline">\((\beta_1\beta_2\beta_3)_{ijk}\)</span> = 0 para todo i ; j; k</li>
+<li>H1 : Pelo menos um <span class="math inline">\((\beta_1\beta_2\beta_3)_{ijk} \neq 0\)</span></li>
+</ul>
+<p><br><br><br></p>
+</div>
+</div>
+<div id="fat3dic" class="section level2" number="10.2">
+<h2><span class="header-section-number">10.2</span> FAT3DIC</h2>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="fatorial-triplo.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(enxofre)</span>
+<span id="cb156-2"><a href="fatorial-triplo.html#cb156-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(enxofre, <span class="fu">FAT3DIC</span>(f1, f2, f3, resp))</span></code></pre></div>
+<pre><code>## 
+## ------------------------------------------
+## Normality of errors
+## ------------------------------------------
+## 
+##  Shapiro-Wilk normality test
+## 
+## data:  anava$residuals
+## W = 0.98386, p-value = 0.217</code></pre>
+<pre><code>## As the calculated p-value is greater than the 5% significance level, hypothesis H0 is not rejected. Therefore, errors can be considered normal</code></pre>
+<pre><code>## 
+## ------------------------------------------
+## Homogeneity of Variances
+## ------------------------------------------
+## 
+##  Bartlett test of homogeneity of variances
+## 
+## data:  anava$residuals by paste(Fator1, Fator2, Fator3)
+## Bartlett&#39;s K-squared = 26.434, df = 26, p-value = 0.4394</code></pre>
+<pre><code>## As the calculated p-value is greater than the 5% significance level, hypothesis H0 is not rejected. Therefore, the variances can be considered homogeneous</code></pre>
+<pre><code>## 
+## ------------------------------------------
+## Independence from errors
+## ------------------------------------------
+## 
+##  Durbin-Watson test
+## 
+## data:  anava
+## DW = 2.8115, p-value = 0.9728
+## alternative hypothesis: true autocorrelation is greater than 0</code></pre>
+<pre><code>## As the calculated p-value is greater than the 5% significance level, hypothesis H0 is not rejected. Therefore, errors can be considered independent</code></pre>
+<pre><code>## 
+## 
+## -----------------------------------------------------------------
+## Additional Information
+## -----------------------------------------------------------------
+## 
+## CV (%) =  6.61
+## Mean =  4985.6044
+## Median =  4975.775
+## Possible outliers =  No discrepant point
+## 
+## ------------------------------------------
+## Analysis of Variance
+## ------------------------------------------
+##                      Df    Sum Sq   Mean.Sq   F value        Pr(F)
+## Fator1                2  532880.7  266440.4  2.455006 9.222958e-02
+## Fator2                2 2593572.1 1296786.1 11.948706 2.835764e-05
+## Fator3                2 1012836.0  506418.0  4.666182 1.207777e-02
+## Fator1:Fator2         4  568195.7  142048.9  1.308852 2.737151e-01
+## Fator1:Fator3         4 2177620.9  544405.2  5.016200 1.157565e-03
+## Fator2:Fator3         4  548172.3  137043.1  1.262728 2.914782e-01
+## Fator1:Fator2:Fator3  8 2255321.1  281915.1  2.597592 1.400982e-02
+## Residuals            81 8790882.9  108529.4</code></pre>
+<pre><code>## </code></pre>
+<p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<pre><code>## 
+## ------------------------------------------
+## Interaction F1*F2*F3  significant: unfolding the interaction
+## ------------------------------------------
+## 
+## ------------------------------------------
+## Analyzing  F1  inside of each level of  F2 and F3
+## ------------------------------------------
+##                                     Df     Sum Sq   Mean Sq   F value
+## Fator2: 150 Fator3: Vegetativo       2 1515236.80 757618.40 6.9807653
+## Fator2: 450 Fator3: Vegetativo       2 1485001.57 742500.78 6.8414702
+## Fator2: 1350 Fator3: Vegetativo      2  355299.69 177649.85 1.6368820
+## Fator2: 150 Fator3: Ciclo Completo   2  110556.18  55278.09 0.5093374
+## Fator2: 450 Fator3: Ciclo Completo   2  509409.88 254704.94 2.3468747
+## Fator2: 1350 Fator3: Ciclo Completo  2   63027.18  31513.59 0.2903691
+## Fator2: 150 Fator3: Reprodutivo      2 1100604.58 550302.29 5.0705357
+## Fator2: 450 Fator3: Reprodutivo      2  195182.15  97591.07 0.8992131
+## Fator2: 1350 Fator3: Reprodutivo     2  199700.39  99850.20 0.9200289
+##                                          Pr(&gt;F)
+## Fator2: 150 Fator3: Vegetativo      0.001595736
+## Fator2: 450 Fator3: Vegetativo      0.001797372
+## Fator2: 1350 Fator3: Vegetativo     0.200956205
+## Fator2: 150 Fator3: Ciclo Completo  0.602805170
+## Fator2: 450 Fator3: Ciclo Completo  0.102141658
+## Fator2: 1350 Fator3: Ciclo Completo 0.748762716
+## Fator2: 150 Fator3: Reprodutivo     0.008418234
+## Fator2: 450 Fator3: Reprodutivo     0.410912121
+## Fator2: 1350 Fator3: Reprodutivo    0.402631134
+## 
+##  F1  within the combination of levels  150  of   F2  and  Vegetativo  of   F3 
+##         resp letters
+## 75  5246.363       a
+## 675 4578.007       b
+## 225 4429.288       b
+## 
+##  F1  within the combination of levels  150  of   F2  and  Ciclo Completo  of   F3 
+##         resp letters
+## 675 5027.233       a
+## 225 4927.000       a
+## 75  4792.932       a
+## 
+##  F1  within the combination of levels  150  of   F2  and  Reprodutivo  of   F3 
+##         resp letters
+## 675 5056.610       a
+## 225 4847.748      ab
+## 75  4335.730       b
+## 
+##  F1  within the combination of levels  450  of   F2  and  Vegetativo  of   F3 
+##         resp letters
+## 75  5286.368       a
+## 225 5125.075       a
+## 675 4472.670       b
+## 
+##  F1  within the combination of levels  450  of   F2  and  Ciclo Completo  of   F3 
+##         resp letters
+## 75  5389.980       a
+## 675 5085.130       a
+## 225 4889.233       a
+## 
+##  F1  within the combination of levels  450  of   F2  and  Reprodutivo  of   F3 
+##         resp letters
+## 675 4968.540       a
+## 75  4847.222       a
+## 225 4658.573       a
+## 
+##  F1  within the combination of levels  1350  of   F2  and  Vegetativo  of   F3 
+##         resp letters
+## 75  5561.840       a
+## 675 5355.302       a
+## 225 5140.382       a
+## 
+##  F1  within the combination of levels  1350  of   F2  and  Ciclo Completo  of   F3 
+##         resp letters
+## 75  5305.762       a
+## 675 5188.823       a
+## 225 5131.625       a
+## 
+##  F1  within the combination of levels  1350  of   F2  and  Reprodutivo  of   F3 
+##         resp letters
+## 225 5147.488       a
+## 75  4984.855       a
+## 675 4831.542       a
+## 
+## 
+## 
+## ------------------------------------------
+## Analyzing  F2  inside of each level of  F1 and F3
+## ------------------------------------------
+##                                    Df     Sum Sq   Mean Sq   F value
+## Fator1: 75 Fator3: Vegetativo       2  236015.40 118007.70 1.0873338
+## Fator1: 225 Fator3: Vegetativo      2 1320014.22 660007.11 6.0813660
+## Fator1: 675 Fator3: Vegetativo      2 1859098.18 929549.09 8.5649505
+## Fator1: 75 Fator3: Ciclo Completo   2  835403.88 417701.94 3.8487440
+## Fator1: 225 Fator3: Ciclo Completo  2  136069.20  68034.60 0.6268770
+## Fator1: 675 Fator3: Ciclo Completo  2   53620.78  26810.39 0.2470334
+## Fator1: 75 Fator3: Reprodutivo      2  935907.40 467953.70 4.3117682
+## Fator1: 225 Fator3: Reprodutivo     2  486225.50 243112.75 2.2400631
+## Fator1: 675 Fator3: Reprodutivo     2  102906.69  51453.35 0.4740958
+##                                          Pr(&gt;F)
+## Fator1: 75 Fator3: Vegetativo      0.3419832110
+## Fator1: 225 Fator3: Vegetativo     0.0034620517
+## Fator1: 675 Fator3: Vegetativo     0.0004223652
+## Fator1: 75 Fator3: Ciclo Completo  0.0253066587
+## Fator1: 225 Fator3: Ciclo Completo 0.5368293731
+## Fator1: 675 Fator3: Ciclo Completo 0.7817009516
+## Fator1: 75 Fator3: Reprodutivo     0.0166168673
+## Fator1: 225 Fator3: Reprodutivo    0.1130067748
+## Fator1: 675 Fator3: Reprodutivo    0.6241638200
+## 
+## 
+##  F2  within the combination of levels  75  of   F1  and  Vegetativo  of   F3 
+##          resp letters
+## 1350 5561.840       a
+## 450  5286.368       a
+## 150  5246.363       a
+## 
+## 
+##  F2  within the combination of levels  75  of   F1  and  Ciclo Completo  of   F3 
+##          resp letters
+## 450  5389.980       a
+## 1350 5305.762      ab
+## 150  4792.932       b
+## 
+## 
+##  F2  within the combination of levels  75  of   F1  and  Reprodutivo  of   F3 
+##          resp letters
+## 1350 4984.855       a
+## 450  4847.222      ab
+## 150  4335.730       b
+## 
+## 
+##  F2  within the combination of levels  225  of   F1  and  Vegetativo  of   F3 
+##          resp letters
+## 1350 5140.382       a
+## 450  5125.075       a
+## 150  4429.288       b
+## 
+## 
+##  F2  within the combination of levels  225  of   F1  and  Ciclo Completo  of   F3 
+##          resp letters
+## 1350 5131.625       a
+## 150  4927.000       a
+## 450  4889.233       a
+## 
+## 
+##  F2  within the combination of levels  225  of   F1  and  Reprodutivo  of   F3 
+##          resp letters
+## 1350 5147.488       a
+## 150  4847.748       a
+## 450  4658.573       a
+## 
+## 
+##  F2  within the combination of levels  675  of   F1  and  Vegetativo  of   F3 
+##          resp letters
+## 1350 5355.302       a
+## 150  4578.007       b
+## 450  4472.670       b
+## 
+## 
+##  F2  within the combination of levels  675  of   F1  and  Ciclo Completo  of   F3 
+##          resp letters
+## 1350 5188.823       a
+## 450  5085.130       a
+## 150  5027.233       a
+## 
+## 
+##  F2  within the combination of levels  675  of   F1  and  Reprodutivo  of   F3 
+##          resp letters
+## 150  5056.610       a
+## 450  4968.540       a
+## 1350 4831.542       a
+## 
+## ------------------------------------------
+## Analyzing  F3  inside of each level of  F1 and F2
+## ------------------------------------------
+##                          Df       Sum Sq     Mean Sq     F value       Pr(&gt;F)
+## Fator1: 75 Fator2: 150    2 1658512.5879 829256.2940 7.640843446 0.0009122708
+## Fator1: 225 Fator2: 150   2  572143.2840 286071.6420 2.635890311 0.0777962047
+## Fator1: 675 Fator2: 150   2  575635.3215 287817.6608 2.651978288 0.0766301475
+## Fator1: 75 Fator2: 450    2  664226.1133 332113.0567 3.060120123 0.0523384862
+## Fator1: 225 Fator2: 450   2  435267.0705 217633.5353 2.005295327 0.1412490062
+## Fator1: 675 Fator2: 450   2  846116.7155 423058.3577 3.898098457 0.0241919824
+## Fator1: 75 Fator2: 1350   2  668625.3331 334312.6665 3.080387530 0.0513616993
+## Fator1: 225 Fator2: 1350  2     505.0583    252.5292 0.002326827 0.9976759449
+## Fator1: 675 Fator2: 1350  2  572918.8352 286459.4176 2.639463311 0.0775356725
+## 
+## 
+##  F3  within the combination of levels  75  of  F1  and  150  of   F2 
+##                    resp letters
+## Vegetativo     5246.363       a
+## Ciclo Completo 4792.932      ab
+## Reprodutivo    4335.730       b
+## 
+## 
+##  F3  within the combination of levels  75  of  F1  and  450  of   F2 
+##                    resp letters
+## Ciclo Completo 5389.980       a
+## Vegetativo     5286.368       a
+## Reprodutivo    4847.222       a
+## 
+## 
+##  F3  within the combination of levels  75  of  F1  and  1350  of   F2 
+##                    resp letters
+## Vegetativo     5561.840       a
+## Ciclo Completo 5305.762      ab
+## Reprodutivo    4984.855       b
+## 
+## 
+##  F3  within the combination of levels  225  of  F1  and  150  of   F2 
+##                    resp letters
+## Ciclo Completo 4927.000       a
+## Reprodutivo    4847.748       a
+## Vegetativo     4429.288       a
+## 
+## 
+##  F3  within the combination of levels  225  of  F1  and  450  of   F2 
+##                    resp letters
+## Vegetativo     5125.075       a
+## Ciclo Completo 4889.233       a
+## Reprodutivo    4658.573       a
+## 
+## 
+##  F3  within the combination of levels  225  of  F1  and  1350  of   F2 
+##                    resp letters
+## Reprodutivo    5147.488       a
+## Vegetativo     5140.382       a
+## Ciclo Completo 5131.625       a
+## 
+## 
+##  F3  within the combination of levels  675  of  F1  and  150  of   F2 
+##                    resp letters
+## Reprodutivo    5056.610       a
+## Ciclo Completo 5027.233       a
+## Vegetativo     4578.007       a
+## 
+## 
+##  F3  within the combination of levels  675  of  F1  and  450  of   F2 
+##                   resp letters
+## Ciclo Completo 5085.13       a
+## Reprodutivo    4968.54      ab
+## Vegetativo     4472.67       b
+## 
+## 
+##  F3  within the combination of levels  675  of  F1  and  1350  of   F2 
+##                    resp letters
+## Vegetativo     5355.302       a
+## Ciclo Completo 5188.823       a
+## Reprodutivo    4831.542       a</code></pre>
+</div>
+<div id="fat3dbc" class="section level2" number="10.3">
+<h2><span class="header-section-number">10.3</span> FAT3DBC</h2>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="fatorial-triplo.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(enxofre)</span>
+<span id="cb166-2"><a href="fatorial-triplo.html#cb166-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(enxofre, <span class="fu">FAT3DBC</span>(f1, f2, f3, bloco, resp))</span></code></pre></div>
+<pre><code>## 
+## ------------------------------------------
+## Normality of errors
+## ------------------------------------------
+##  Shapiro-Wilk normality test
+## 
+## data:  anava$residuals
+## W = 0.989, p-value = 0.5281</code></pre>
+<pre><code>## As the calculated p-value is greater than the 5% significance level, hypothesis H0 is not rejected. Therefore, errors can be considered normal</code></pre>
+<pre><code>## 
+## ------------------------------------------
+## Homogeneity of Variances
+## ------------------------------------------
+##  Bartlett test of homogeneity of variances
+## 
+## data:  anava$residuals by paste(Fator1, Fator2, Fator3)
+## Bartlett&#39;s K-squared = 25.924, df = 26, p-value = 0.4673</code></pre>
+<pre><code>## As the calculated p-value is greater than the 5% significance level, hypothesis H0 is not rejected. Therefore, the variances can be considered homogeneous</code></pre>
+<pre><code>## 
+## ------------------------------------------
+## Independence from errors
+## ------------------------------------------
+##  Durbin-Watson test
+## 
+## data:  anava
+## DW = 2.824, p-value = 0.9766
+## alternative hypothesis: true autocorrelation is greater than 0</code></pre>
+<pre><code>## As the calculated p-value is greater than the 5% significance level, hypothesis H0 is not rejected. Therefore, errors can be considered independent</code></pre>
+<pre><code>## 
+## 
+## -----------------------------------------------------------------
+## Additional Information
+## -----------------------------------------------------------------
+## 
+## CV (%) =  6.67
+## Mean =  4985.6044
+## Median =  4975.775
+## Possible outliers =  No discrepant point
+## 
+## ------------------------------------------
+## Analysis of Variance
+## ------------------------------------------
+##                      Df    Sum Sq    Mean.Sq    F value        Pr(F)
+## Fator1                2  532880.7  266440.37  2.4098282 9.649081e-02
+## Fator2                2 2593572.1 1296786.07 11.7288222 3.520329e-05
+## Fator3                2 1012836.0  506417.98  4.5803133 1.315819e-02
+## bloco                 3  166887.1   55629.03  0.5031385 6.812289e-01
+## Fator1:Fator2         4  568195.7  142048.92  1.2847659 2.832261e-01
+## Fator1:Fator3         4 2177620.9  544405.23  4.9238901 1.361837e-03
+## Fator2:Fator3         4  548172.3  137043.08  1.2394905 3.011456e-01
+## Fator1:Fator2:Fator3  8 2255321.1  281915.14  2.5497903 1.598465e-02
+## Residuals            78 8623995.8  110564.05</code></pre>
+<pre><code>## </code></pre>
+<p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<pre><code>## 
+## ------------------------------------------
+## 
+## Interaction F1*F2*F3  significant: unfolding the interaction
+## 
+## ------------------------------------------
+## 
+## ------------------------------------------
+## Analyzing  F1  within the combination of levels  F2 and F3
+## ------------------------------------------
+##                                     Df     Sum Sq   Mean Sq   F value
+## Fator2: 150 Fator3: Vegetativo       2 1515236.80 757618.40 6.8523034
+## Fator2: 450 Fator3: Vegetativo       2 1485001.57 742500.78 6.7155716
+## Fator2: 1350 Fator3: Vegetativo      2  355299.69 177649.85 1.6067596
+## Fator2: 150 Fator3: Ciclo Completo   2  110556.18  55278.09 0.4999644
+## Fator2: 450 Fator3: Ciclo Completo   2  509409.88 254704.94 2.3036868
+## Fator2: 1350 Fator3: Ciclo Completo  2   63027.18  31513.59 0.2850257
+## Fator2: 150 Fator3: Reprodutivo      2 1100604.58 550302.29 4.9772263
+## Fator2: 450 Fator3: Reprodutivo      2  195182.15  97591.07 0.8826655
+## Fator2: 1350 Fator3: Reprodutivo     2  199700.39  99850.20 0.9030982
+##                                          Pr(&gt;F)
+## Fator2: 150 Fator3: Vegetativo      0.001813153
+## Fator2: 450 Fator3: Vegetativo      0.002037125
+## Fator2: 1350 Fator3: Vegetativo     0.207102162
+## Fator2: 150 Fator3: Ciclo Completo  0.608482641
+## Fator2: 450 Fator3: Ciclo Completo  0.106648740
+## Fator2: 1350 Fator3: Ciclo Completo 0.752774794
+## Fator2: 150 Fator3: Reprodutivo     0.009239195
+## Fator2: 450 Fator3: Reprodutivo     0.417769568
+## Fator2: 1350 Fator3: Reprodutivo    0.409507252
+## 
+## 
+##  F1  inside of each level of  150  of  F2  and  Vegetativo  of  F3 
+##         resp letters
+## 75  5246.363       a
+## 675 4578.007       b
+## 225 4429.288       b
+## 
+## 
+##  F1  inside of each level of  150  of  F2  and  Ciclo Completo  of  F3 
+##         resp letters
+## 675 5027.233       a
+## 225 4927.000       a
+## 75  4792.932       a
+## 
+## 
+##  F1  inside of each level of  150  of  F2  and  Reprodutivo  of  F3 
+##         resp letters
+## 675 5056.610       a
+## 225 4847.748      ab
+## 75  4335.730       b
+## 
+## 
+##  F1  inside of each level of  450  of  F2  and  Vegetativo  of  F3 
+##         resp letters
+## 75  5286.368       a
+## 225 5125.075       a
+## 675 4472.670       b
+## 
+## 
+##  F1  inside of each level of  450  of  F2  and  Ciclo Completo  of  F3 
+##         resp letters
+## 75  5389.980       a
+## 675 5085.130       a
+## 225 4889.233       a
+## 
+## 
+##  F1  inside of each level of  450  of  F2  and  Reprodutivo  of  F3 
+##         resp letters
+## 675 4968.540       a
+## 75  4847.222       a
+## 225 4658.573       a
+## 
+## 
+##  F1  inside of each level of  1350  of  F2  and  Vegetativo  of  F3 
+##         resp letters
+## 75  5561.840       a
+## 675 5355.302       a
+## 225 5140.382       a
+## 
+## 
+##  F1  inside of each level of  1350  of  F2  and  Ciclo Completo  of  F3 
+##         resp letters
+## 75  5305.762       a
+## 675 5188.823       a
+## 225 5131.625       a
+## 
+## 
+##  F1  inside of each level of  1350  of  F2  and  Reprodutivo  of  F3 
+##         resp letters
+## 225 5147.488       a
+## 75  4984.855       a
+## 675 4831.542       a
+## 
+## 
+## 
+## ------------------------------------------
+## Analyzing  F2  within the combination of levels  F1 and F3
+## ------------------------------------------
+##                                    Df     Sum Sq   Mean Sq   F value
+## Fator1: 75 Fator3: Vegetativo       2  236015.40 118007.70 1.0673243
+## Fator1: 225 Fator3: Vegetativo      2 1320014.22 660007.11 5.9694550
+## Fator1: 675 Fator3: Vegetativo      2 1859098.18 929549.09 8.4073359
+## Fator1: 75 Fator3: Ciclo Completo   2  835403.88 417701.94 3.7779183
+## Fator1: 225 Fator3: Ciclo Completo  2  136069.20  68034.60 0.6153411
+## Fator1: 675 Fator3: Ciclo Completo  2   53620.78  26810.39 0.2424874
+## Fator1: 75 Fator3: Reprodutivo      2  935907.40 467953.70 4.2324219
+## Fator1: 225 Fator3: Reprodutivo     2  486225.50 243112.75 2.1988409
+## Fator1: 675 Fator3: Reprodutivo     2  102906.69  51453.35 0.4653714
+##                                          Pr(&gt;F)
+## Fator1: 75 Fator3: Vegetativo      0.3488962873
+## Fator1: 225 Fator3: Vegetativo     0.0038701904
+## Fator1: 675 Fator3: Vegetativo     0.0004937911
+## Fator1: 75 Fator3: Ciclo Completo  0.0271614813
+## Fator1: 225 Fator3: Ciclo Completo 0.5430591078
+## Fator1: 675 Fator3: Ciclo Completo 0.7852629386
+## Fator1: 75 Fator3: Reprodutivo     0.0179864982
+## Fator1: 225 Fator3: Reprodutivo    0.1177618911
+## Fator1: 675 Fator3: Reprodutivo    0.6296338939
+## 
+## 
+##  F2  inside of each level of  75  of  F1  and  Vegetativo  of  F3 
+##          resp letters
+## 1350 5561.840       a
+## 450  5286.368       a
+## 150  5246.363       a
+## 
+## 
+##  F2  inside of each level of  75  of  F1  and  Ciclo Completo  of  F3 
+##          resp letters
+## 450  5389.980       a
+## 1350 5305.762      ab
+## 150  4792.932       b
+## 
+## 
+##  F2  inside of each level of  75  of  F1  and  Reprodutivo  of  F3 
+##          resp letters
+## 1350 4984.855       a
+## 450  4847.222      ab
+## 150  4335.730       b
+## 
+## 
+##  F2  inside of each level of  225  of  F1  and  Vegetativo  of  F3 
+##          resp letters
+## 1350 5140.382       a
+## 450  5125.075       a
+## 150  4429.288       b
+## 
+## 
+##  F2  inside of each level of  225  of  F1  and  Ciclo Completo  of  F3 
+##          resp letters
+## 1350 5131.625       a
+## 150  4927.000       a
+## 450  4889.233       a
+## 
+## 
+##  F2  inside of each level of  225  of  F1  and  Reprodutivo  of  F3 
+##          resp letters
+## 1350 5147.488       a
+## 150  4847.748       a
+## 450  4658.573       a
+## 
+## 
+##  F2  inside of each level of  675  of  F1  and  Vegetativo  of  F3 
+##          resp letters
+## 1350 5355.302       a
+## 150  4578.007       b
+## 450  4472.670       b
+## 
+## 
+##  F2  inside of each level of  675  of  F1  and  Ciclo Completo  of  F3 
+##          resp letters
+## 1350 5188.823       a
+## 450  5085.130       a
+## 150  5027.233       a
+## 
+## 
+##  F2  inside of each level of  675  of  F1  and  Reprodutivo  of  F3 
+##          resp letters
+## 150  5056.610       a
+## 450  4968.540       a
+## 1350 4831.542       a
+## 
+## ------------------------------------------
+## Analyzing  F3  within the combination of levels  F1 and F2
+## ------------------------------------------
+##                          Df       Sum Sq     Mean Sq     F value      Pr(&gt;F)
+## Fator1: 75 Fator2: 150    2 1658512.5879 829256.2940 7.500234535 0.001048985
+## Fator1: 225 Fator2: 150   2  572143.2840 286071.6420 2.587383930 0.081661472
+## Fator1: 675 Fator2: 150   2  575635.3215 287817.6608 2.603175851 0.080461250
+## Fator1: 75 Fator2: 450    2  664226.1133 332113.0567 3.003806948 0.055368426
+## Fator1: 225 Fator2: 450   2  435267.0705 217633.5353 1.968393329 0.146558601
+## Fator1: 675 Fator2: 450   2  846116.7155 423058.3577 3.826364573 0.025988577
+## Fator1: 75 Fator2: 1350   2  668625.3331 334312.6665 3.023701388 0.054355301
+## Fator1: 225 Fator2: 1350  2     505.0583    252.5292 0.002284008 0.997718665
+## Fator1: 675 Fator2: 1350  2  572918.8352 286459.4176 2.590891179 0.081393337
+## 
+## 
+##  F3  inside of each level of  75  of  F1  and  150  of  F2 
+##                    resp letters
+## Vegetativo     5246.363       a
+## Ciclo Completo 4792.932      ab
+## Reprodutivo    4335.730       b
+## 
+## 
+##  F3  inside of each level of  75  of  F1  and  450  of  F2 
+##                    resp letters
+## Ciclo Completo 5389.980       a
+## Vegetativo     5286.368       a
+## Reprodutivo    4847.222       a
+## 
+## 
+##  F3  inside of each level of  75  of  F1  and  1350  of  F2 
+##                    resp letters
+## Vegetativo     5561.840       a
+## Ciclo Completo 5305.762      ab
+## Reprodutivo    4984.855       b
+## 
+## 
+##  F3  inside of each level of  225  of  F1  and  150  of  F2 
+##                    resp letters
+## Ciclo Completo 4927.000       a
+## Reprodutivo    4847.748       a
+## Vegetativo     4429.288       a
+## 
+## 
+##  F3  inside of each level of  225  of  F1  and  450  of  F2 
+##                    resp letters
+## Vegetativo     5125.075       a
+## Ciclo Completo 4889.233       a
+## Reprodutivo    4658.573       a
+## 
+## 
+##  F3  inside of each level of  225  of  F1  and  1350  of  F2 
+##                    resp letters
+## Reprodutivo    5147.488       a
+## Vegetativo     5140.382       a
+## Ciclo Completo 5131.625       a
+## 
+## 
+##  F3  inside of each level of  675  of  F1  and  150  of  F2 
+##                    resp letters
+## Reprodutivo    5056.610       a
+## Ciclo Completo 5027.233       a
+## Vegetativo     4578.007       a
+## 
+## 
+##  F3  inside of each level of  675  of  F1  and  450  of  F2 
+##                   resp letters
+## Ciclo Completo 5085.13       a
+## Reprodutivo    4968.54      ab
+## Vegetativo     4472.67       b
+## 
+## 
+##  F3  inside of each level of  675  of  F1  and  1350  of  F2 
+##                    resp letters
+## Vegetativo     5355.302       a
+## Ciclo Completo 5188.823       a
+## Reprodutivo    4831.542       a</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="esquema-fatoria-duplo.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="parcela-subdividida.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["AgroR_Tutorial.pdf", "AgroR_Tutorial.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
