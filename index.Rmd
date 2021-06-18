@@ -1,5 +1,7 @@
 --- 
-title: "AgroR"
+title: |
+  ![](https://raw.githubusercontent.com/cran/AgroR/master/man/figures/logo.png)
+  Welcome to AgroR
 subtitle: "Experimental Statistics and Graphics for Agricultural Sciences"
 author: "Gabriel Danilo Shimizu"
 date: "`r Sys.Date()`"

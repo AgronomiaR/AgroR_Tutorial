@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 16 Teste de Dunnett | AgroR</title>
-  <meta name="description" content="Capítulo 16 Teste de Dunnett | AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
+  <title>Capítulo 16 Teste de Dunnett |  Welcome to AgroR</title>
+  <meta name="description" content="AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 16 Teste de Dunnett | AgroR" />
+  <meta property="og:title" content="Capítulo 16 Teste de Dunnett |  Welcome to AgroR" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Capítulo 16 Teste de Dunnett | AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
+  <meta property="og:description" content="AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 16 Teste de Dunnett | AgroR" />
+  <meta name="twitter:title" content="Capítulo 16 Teste de Dunnett |  Welcome to AgroR" />
   
-  <meta name="twitter:description" content="Capítulo 16 Teste de Dunnett | AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
+  <meta name="twitter:description" content="AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
   
 
 <meta name="author" content="Gabriel Danilo Shimizu" />
 
 
-<meta name="date" content="2021-06-17" />
+<meta name="date" content="2021-06-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -305,7 +305,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AgroR</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p><img src="https://raw.githubusercontent.com/cran/AgroR/master/man/figures/logo.png" />
+Welcome to AgroR</p></a>
           </h1>
         </div>
 
@@ -319,12 +320,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">16.1</span> DIC</h2>
 <div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="teste-de-dunnett.html#cb239-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;pomegranate&quot;</span>)</span>
 <span id="cb239-2"><a href="teste-de-dunnett.html#cb239-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(pomegranate,<span class="fu">dunnett</span>(<span class="at">trat=</span>trat,<span class="at">resp=</span>WL,<span class="at">control=</span><span class="st">&quot;T1&quot;</span>))</span></code></pre></div>
-<pre><code>##           Estimate     IC-lwr    IC-upr t value p-value sig
-## T1  -  T2  -0.1650 -0.6435553 0.3135553 -0.9528  0.8034  ns
-## T1  -  T3   0.7750  0.2964447 1.2535553  4.4753  0.0012  **
-## T1  -  T4   0.7775  0.2989447 1.2560553  4.4898  0.0013  **
-## T1  -  T5   0.7950  0.3164447 1.2735553  4.5908  0.0009  **
-## T1  -  T6   0.3200 -0.1585553 0.7985553  1.8479  0.2667  ns</code></pre>
+<pre><code>##           Estimate    IC-lwr   IC-upr t value p-value sig
+## T1  -  T2  -0.1650 -0.643479 0.313479 -0.9528  0.8034  ns
+## T1  -  T3   0.7750  0.296521 1.253479  4.4753  0.0013  **
+## T1  -  T4   0.7775  0.299021 1.255979  4.4898  0.0012  **
+## T1  -  T5   0.7950  0.316521 1.273479  4.5908  0.0009  **
+## T1  -  T6   0.3200 -0.158479 0.798479  1.8479  0.2668  ns</code></pre>
 <p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
 </div>
 <div id="esquema-fatorial" class="section level2" number="16.2">
@@ -352,14 +353,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb246-7"><a href="teste-de-dunnett.html#cb246-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">control =</span> <span class="st">&quot;Test&quot;</span>,</span>
 <span id="cb246-8"><a href="teste-de-dunnett.html#cb246-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">block=</span>bloco,<span class="at">model =</span> <span class="st">&quot;DBC&quot;</span>))</span></code></pre></div>
 <pre><code>##                    Estimate     IC-lwr     IC-upr t value p-value sig
-## Test  -  INPlantio    -34.2 -148.79758   80.39758 -0.8376  0.9479  ns
-## Test  -  INV1+15     -166.6 -281.19758  -52.00242 -4.0802  0.0020  **
-## Test  -  INV3+15       -3.0 -117.59758  111.59758 -0.0735  1.0000  ns
-## Test  -  INR1+15      -70.4 -184.99758   44.19758 -1.7242  0.4038  ns
-## Test  -  NIPlantio   -136.4 -250.99758  -21.80242 -3.3405  0.0136   *
-## Test  -  NIV1+15      155.2   40.60242  269.79758  3.8010  0.0041  **
-## Test  -  NIV3+15     -215.0 -329.59758 -100.40242 -5.2655  0.0001  **
-## Test  -  NIR1+15     -238.8 -353.39758 -124.20242 -5.8484  0.0000  **</code></pre>
+## Test  -  INPlantio    -34.2 -148.81943   80.41943 -0.8376  0.9478  ns
+## Test  -  INV1+15     -166.6 -281.21943  -51.98057 -4.0802  0.0019  **
+## Test  -  INV3+15       -3.0 -117.61943  111.61943 -0.0735  1.0000  ns
+## Test  -  INR1+15      -70.4 -185.01943   44.21943 -1.7242  0.4041  ns
+## Test  -  NIPlantio   -136.4 -251.01943  -21.78057 -3.3405  0.0138   *
+## Test  -  NIV1+15      155.2   40.58057  269.81943  3.8010  0.0042  **
+## Test  -  NIV3+15     -215.0 -329.61943 -100.38057 -5.2655  0.0000  **
+## Test  -  NIR1+15     -238.8 -353.41943 -124.18057 -5.8484  0.0000  **</code></pre>
 <p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
 </div>
 </div>
