@@ -2,7 +2,7 @@
 
 Em algumas áreas das ciências agrárias, é comum realizar avaliações ao longo do tempo ou conduzir experimentos em que uma das variáveis explicativas não é de interesse e o pesquisador queira analisar individualmente, todavia, apresentando em um único gráfico. Nesse sentido, foi desenvolvido as funções DICT, DBCT e DQLT.
 
-**Nota**: Quando constatado que não efeito significativo, no gráfico, irá exibir como "ns"
+**Nota**: Quando constatado que não há efeito significativo, no gráfico, irá exibir como "ns".
 
 ## DICT
 

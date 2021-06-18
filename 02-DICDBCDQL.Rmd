@@ -46,6 +46,71 @@ tabledesc(pomegranate)
 
 ****
 
+# Função para croqui experimental
+
+****
+
+```{r}
+Trat=paste("Treatments",1:6)
+```
+
+## Delineamento inteiramente casualizado
+
+```{r}
+sketch(Trat,r=3)
+```
+
+## Delineamento em blocos casualizados
+
+```{r}
+sketch(Trat, r=3, design="dbc")
+```
+
+## Delineamento inteiramente casualizado em esquema fatorial duplo
+
+```{r}
+sketch(trat=c(1,2),
+       trat1=c(1,2,3),
+       design = "fat2dic",
+       r=3)
+```
+
+
+****
+
+# Teste para duas amostras
+
+****
+
+## Teste t não pareado
+
+```{r}
+resp=rnorm(100,100,5)
+trat=rep(c("A","B"),e=50)
+test_two(trat,resp)
+```
+
+## Teste t pareado
+
+```{r}
+test_two(trat,resp,paired = TRUE)
+```
+
+## Teste Wilcoxon
+
+```{r}
+test_two(trat,resp,test = "w")
+```
+
+## Teste Wilcoxon pareado
+
+```{r}
+test_two(trat,resp,paired = TRUE,test = "w")
+```
+
+
+****
+
 # Delineamento Inteiramente Casualizado
 
 ****
@@ -435,6 +500,8 @@ Total         | $ab-1$  |$SQ_{Total}$ | -                       | -             
 
 <br>
 
+## DBC
+
 No pacote AgroR, os argumentos para DBC e DQL são muito similares a função DIC. A diferença está apenas na inserção do argumento `block` e da alteração do teste não-paramétrico para Friedman.
 
 ```{r}
@@ -520,6 +587,8 @@ resíduo       | $(p-2)(p-1)$|$SQ_{Res}$  |$\frac{SQRes}{(p-2)(p-1)}$|          
 Total         | $p^2-1$     |$SQ_{Total}$|                          |                         |
 
 <br><br>
+
+## DQL
 
 No AgroR, podemos realizar a análise de um experimento em quadrado latino pelo seguinte comando:
 

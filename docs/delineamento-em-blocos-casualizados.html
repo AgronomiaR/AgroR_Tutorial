@@ -181,7 +181,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1.3" data-path="delineamento-em-blocos-casualizados.html"><a href="delineamento-em-blocos-casualizados.html#modelo-matemático"><i class="fa fa-check"></i><b>5.1.3</b> Modelo matemático</a></li>
 <li class="chapter" data-level="5.1.4" data-path="delineamento-em-blocos-casualizados.html"><a href="delineamento-em-blocos-casualizados.html#hipóteses-e-modelo-1"><i class="fa fa-check"></i><b>5.1.4</b> Hipóteses e Modelo</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="delineamento-em-blocos-casualizados.html"><a href="delineamento-em-blocos-casualizados.html#teste-de-friedman"><i class="fa fa-check"></i><b>5.2</b> Teste de Friedman</a></li>
+<li class="chapter" data-level="5.2" data-path="delineamento-em-blocos-casualizados.html"><a href="delineamento-em-blocos-casualizados.html#dbc"><i class="fa fa-check"></i><b>5.2</b> DBC</a></li>
+<li class="chapter" data-level="5.3" data-path="delineamento-em-blocos-casualizados.html"><a href="delineamento-em-blocos-casualizados.html#teste-de-friedman"><i class="fa fa-check"></i><b>5.3</b> Teste de Friedman</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="delineamento-em-quadrado-latino.html"><a href="delineamento-em-quadrado-latino.html"><i class="fa fa-check"></i><b>6</b> Delineamento em quadrado latino</a>
 <ul>
@@ -190,6 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1.1" data-path="delineamento-em-quadrado-latino.html"><a href="delineamento-em-quadrado-latino.html#modelo-matemático-1"><i class="fa fa-check"></i><b>6.1.1</b> Modelo matemático</a></li>
 <li class="chapter" data-level="6.1.2" data-path="delineamento-em-quadrado-latino.html"><a href="delineamento-em-quadrado-latino.html#hipóteses-e-modelo-2"><i class="fa fa-check"></i><b>6.1.2</b> Hipóteses e Modelo</a></li>
 </ul></li>
+<li class="chapter" data-level="6.2" data-path="delineamento-em-quadrado-latino.html"><a href="delineamento-em-quadrado-latino.html#dql"><i class="fa fa-check"></i><b>6.2</b> DQL</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="dic-e-dbc-por-glm.html"><a href="dic-e-dbc-por-glm.html"><i class="fa fa-check"></i><b>7</b> DIC e DBC por glm</a></li>
 <li class="chapter" data-level="8" data-path="dict-dbct-e-dqlt.html"><a href="dict-dbct-e-dqlt.html"><i class="fa fa-check"></i><b>8</b> DICT, DBCT e DQLT</a>
@@ -382,6 +384,10 @@ H_1: &amp; \mu_i \neq \mu_i&#39; \qquad i \neq i&#39;.
 </tbody>
 </table>
 <p><br></p>
+</div>
+</div>
+<div id="dbc" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> DBC</h2>
 <p>No pacote AgroR, os argumentos para DBC e DQL são muito similares a função DIC. A diferença está apenas na inserção do argumento <code>block</code> e da alteração do teste não-paramétrico para Friedman.</p>
 <div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="delineamento-em-blocos-casualizados.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span>
 <span id="cb56-2"><a href="delineamento-em-blocos-casualizados.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(laranja)</span>
@@ -444,9 +450,8 @@ H_1: &amp; \mu_i \neq \mu_i&#39; \qquad i \neq i&#39;.
 ## Trifoliata       140.0000      c</code></pre>
 <p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-14-2.png" width="672" /></p>
 </div>
-</div>
-<div id="teste-de-friedman" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Teste de Friedman</h2>
+<div id="teste-de-friedman" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Teste de Friedman</h2>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="delineamento-em-blocos-casualizados.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(laranja, <span class="fu">DBC</span>(trat, bloco, resp, <span class="at">test=</span><span class="st">&quot;noparametric&quot;</span>))</span></code></pre></div>
 <pre><code>## 
 ## 
