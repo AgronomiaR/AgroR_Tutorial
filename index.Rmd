@@ -15,6 +15,11 @@ description: "AgroR: Experimental Statistics and Graphics for Agricultural Scien
 
 # Introdução
 
+[![CRAN status](https://www.r-pkg.org/badges/version-ago/AgroR)](https://CRAN.R-project.org/package=AgroR)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable-1)
+![Downloads](http://cranlogs.r-pkg.org/badges/AgroR)
+![Total Downloads](https://cranlogs.r-pkg.org/badges/grand-total/AgroR)
+
 Realiza a análise de delineamentos experimentais inteiramente casualizados (DIC), blocos casualizados (DIC) e quadrado latino (DQL), experimentos em esquema fatorial duplo e triplo (em DIC e DBC), experimentos em esquema de parcela subdividida (em DIC e DBC), parcela subsubdividida em DBC, análise conjunta de experimentos em DIC e DBC, análise de regressão linear e logístico, teste para duas amostras. O pacote realiza análise de variância, suposições ANOVA e teste de comparação múltipla de médias ou regressão, segundo Pimentel-Gomes (2009, ISBN: 978-85-7133-055-9), teste não paramétrico (Conover, 1999, ISBN: 0471160687), teste para duas amostras, análise conjunta de experimentos de acordo com Ferreira (2018, ISBN: 978-85-7269-566-4), Anova de ranks alinhadas (Wobbrock, JO, Findlater, L., Gergle, D., & Higgins , JJ (2011), <doi: 10.1145 / 1978942.1978963>) e modelo linear generalizado (glm) para binomial e família Poisson em DIC e DBC (Carvalho, FJ (2019), <doi: 10.14393 / ufu.te.2019.1244>) . Também pode ser utilizado para obter medidas descritivas e gráficos, além de correlações e gráficos criativos usados nas ciências agrárias (Agronomia, Zootecnia, Ciência dos Alimentos e áreas afins). 
 
 ## Descrições gerais
