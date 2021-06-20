@@ -2,6 +2,12 @@
 
 A instalação do pacote pode ser realizado pelo seguinte comando:
 
-$$`install.packages("AgroR")`$$
+<center>
+
+`install.packages("AgroR")`
+
+![](install.png)
+
+</center>
 
 Nota: Mantenha seu R atualizado (Versão atual 4.1.0). O AgroR exige versão superior a 3.6.0.
