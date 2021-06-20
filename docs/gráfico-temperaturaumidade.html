@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 19 Gráfico temperatura/umidade |  Welcome to AgroR</title>
+  <title>Capítulo 19 Gráfico temperatura/umidade | Welcome to AgroR</title>
   <meta name="description" content="AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 19 Gráfico temperatura/umidade |  Welcome to AgroR" />
+  <meta property="og:title" content="Capítulo 19 Gráfico temperatura/umidade | Welcome to AgroR" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 19 Gráfico temperatura/umidade |  Welcome to AgroR" />
+  <meta name="twitter:title" content="Capítulo 19 Gráfico temperatura/umidade | Welcome to AgroR" />
   
   <meta name="twitter:description" content="AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Gabriel Danilo Shimizu" />
 
 
-<meta name="date" content="2021-06-18" />
+<meta name="date" content="2021-06-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -305,8 +305,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p><img src="https://raw.githubusercontent.com/cran/AgroR/master/man/figures/logo.png" />
-Welcome to AgroR</p></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p>Welcome to AgroR</p></a>
           </h1>
         </div>
 
@@ -318,6 +317,7 @@ Welcome to AgroR</p></a>
 <h1><span class="header-section-number">Capítulo 19</span> Gráfico temperatura/umidade</h1>
 <div id="plot_th" class="section level2" number="19.1">
 <h2><span class="header-section-number">19.1</span> plot_TH</h2>
+<p>Essa função realiza um gráfico temperatura/umidade ou temperatura/precipitação, comum em artigos científicos na agronomia.</p>
 <div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="gráfico-temperaturaumidade.html#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(weather)</span>
 <span id="cb264-2"><a href="gráfico-temperaturaumidade.html#cb264-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(weather, <span class="fu">plot_TH</span>(tempo, Tmed, Tmax, Tmin, UR))</span></code></pre></div>
 <pre><code>## Scale for &#39;y&#39; is already present. Adding another scale for &#39;y&#39;, which will
@@ -326,6 +326,7 @@ Welcome to AgroR</p></a>
 </div>
 <div id="plot_th1" class="section level2" number="19.2">
 <h2><span class="header-section-number">19.2</span> plot_TH1</h2>
+<p>Essa função realiza um gráfico temperatura/umidade ou temperatura/precipitação, sendo um alternativa ao gráfico apresentado na função <code>plot_TH1</code>.</p>
 <div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="gráfico-temperaturaumidade.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(weather)</span>
 <span id="cb266-2"><a href="gráfico-temperaturaumidade.html#cb266-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(weather, <span class="fu">plot_TH1</span>(tempo, Tmed, Tmax, Tmin, UR))</span></code></pre></div>
 <p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>

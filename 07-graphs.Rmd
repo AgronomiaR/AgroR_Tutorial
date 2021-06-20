@@ -2,12 +2,16 @@
 
 ## polynomial
 
+A análise de regressão polinomial até terceiro grau no caso de delineamento simples (DIC, DBC ou DQL) ou de efeito isolado do fator quantitativo no caso de arranjos fatoriais ou parcelas subdivididas podem ser realizadas ainda na própria função correspondendo, declarando o argumento quali como FALSE ao respectivo fator quantitativo. Todavia, há restrições quanto a alteração do layout gráfico nesses casos. Assim, é aconselhavel a utilização da função `polynomial`.
+
 ```{r}
 data("phao")
 with(phao, polynomial(dose,comp, grau = 2))
 ```
 
 ## polynomial2
+
+Assim como na função `polynomial`, há também a opção de usar a função `polynomial2`, que realiza a análise de regressão polinomial até terceiro grau no caso de delineamentos conduzidos em arranjos fatoriais ou parcelas subdivididas em um dos fatores é quantitativo e outro qualitativo.
 
 ```{r}
 dose=rep(c(0,0,0,2,2,2,4,4,4,6,6,6),3)
@@ -19,11 +23,15 @@ polynomial2(dose, resp, trat, grau=c(1,2,3))
 
 ## polynomial2_color
 
+A função polynomial2_color realiza a mesma análise da função `polynomial2`, contudo, a saída gráfica apresenta diferenciação do fator qualitativo por coloração.
+
 ```{r}
 polynomial2_color(dose, resp, trat, grau=c(1,2,3))
 ```
 
 # Teste de Dunnett
+
+O teste de Dunnett serve para comparações múltiplas em que apenas um tratamento serve de referência, ou seja, deseja-se apenas comparar todos com apenas um. Por exemplo, o tratamento padrão (pode ser chamado de controle, testemunha...) não havendo interesse na comparação dos demais tratamentos entre si. Nas ciências agrárias, tal teste tem sido utilizado em experimentos fatoriais com testemunha adicional. Nesse capítulo, apresentamos um exemplo de teste de dunnet para experimentos simples e para um experimento em esquema fatorial com uma testemunha adicional.
 
 ## DIC
 
@@ -50,6 +58,8 @@ with(data,dunnett(trat = trat,
 
 # Gráficos externos
 
+O AgroR também permite alterar os tipos gráficos dos resultados. Essas extensões do pacote tem a finalidade de fornecer opções ao usuário para representação dos resultados de forma gráfica a fim de facilitar o entendimento pelo usuário, bem como aos futuros leitores.
+
 ```{r,fig.show='hide',message=FALSE,results='hide'}
 data(pomegranate)
 graph=with(pomegranate,DIC(trat,WL,mcomp = "sk"))
@@ -57,11 +67,17 @@ graph=with(pomegranate,DIC(trat,WL,mcomp = "sk"))
 
 ## barplot_positive
 
+Essa função gráfica foi construída para representar um gráfico de colunas com dois lados positivos. Na ciências agrárias, sobretudo na agronomia, é comum realizar avaliações de parâmetros de parte aérea e raiz de uma planta, assim, como forma de simbolizar o mesmo, podemos representar dessa forma.
+
+Obs. Esse tipo de gráfico não é limitado apenas a situação mencionada acima.
+
 ```{r}
 barplot_positive(graph,graph)
 ```
 
 ## bar_graph
+
+A função `bar_graph` é similar ao argumento geom="bar" das funções de análise.
 
 ```{r}
 bar_graph(graph)
@@ -73,6 +89,8 @@ bar_graph(graph,horiz = FALSE)
 
 ## seg_graph
 
+A função `seg_graph` é similar ao argumento geom="point" das funções de análise.
+
 ```{r}
 seg_graph(graph)
 ```
@@ -82,11 +100,17 @@ seg_graph(graph,horiz = FALSE)
 
 ## plot_jitter
 
+A função `plot_jitter` adiciona as observações em um gráfico de colunas importado das funções de análise.
+
 ```{r}
 plot_jitter(graph)
 ```
 
 ## sk_graph
+
+A função `sk_graph` realiza um gráfico de colunas com as cores separadas por grupo, conforme teste de Scott-Knott. 
+
+Obs. Essa função somente é válida para teste de Scott-Knott.
 
 ```{r}
 sk_graph(graph)
@@ -94,10 +118,16 @@ sk_graph(graph)
 
 ## radargraph
 
+A função `radargraph` realiza um gráfico de colunas circulares com as cores separadas por grupo, conforme teste de Scott-Knott. 
+
+Obs. Essa função somente é válida para teste de Scott-Knott.
+
 ```{r}
 radargraph(graph)
 ```
 ## plot_interaction
+
+A função `plot_interaction` realiza o gráfico de interação a partir dos resultados de uma análise em que houve interação dupla significativa.
 
 ```{r,results='hide',message=FALSE,fig.show='hide'}
 data(cloro)
@@ -112,6 +142,8 @@ plot_interaction(a)
 
 ## corgraph
 
+A função `corgraph` realiza um correlograma, expressando o valor da correlação, bem como se é ou não significativo.
+
 ```{r}
 data("pomegranate")
 corgraph(pomegranate[,-1])
@@ -119,12 +151,16 @@ corgraph(pomegranate[,-1])
 
 ## cor_ic
 
+A função `cor_ic` realiza uma nova abordagem gráfica para correlação de Pearson, exibindo também o intervalo de confiança.
+
 ```{r}
 data("pomegranate")
 cor_ic(pomegranate[,-1])
 ```
 
 ## plot_cor
+
+A função `plot_cor` realiza a análise de correlação com um gráfico de dispersão e a linha de tendência linear.
 
 ```{r}
 data("pomegranate")
@@ -135,6 +171,8 @@ with(pomegranate, plot_cor(WL, SS, xlab="WL", ylab="SS"))
 
 ## plot_TH
 
+Essa função realiza um gráfico temperatura/umidade ou temperatura/precipitação, comum em artigos científicos na agronomia.
+
 ```{r}
 data(weather)
 with(weather, plot_TH(tempo, Tmed, Tmax, Tmin, UR))
@@ -142,12 +180,16 @@ with(weather, plot_TH(tempo, Tmed, Tmax, Tmin, UR))
 
 ## plot_TH1
 
+Essa função realiza um gráfico temperatura/umidade ou temperatura/precipitação, sendo um alternativa ao gráfico apresentado na função `plot_TH1`.
+
 ```{r}
 data(weather)
 with(weather, plot_TH1(tempo, Tmed, Tmax, Tmin, UR))
 ```
 
 # Gráfico radar/aranha
+
+O gráfico da função spider_graph é muito utilizado em estudos de análise sensorial.
 
 ```{r}
 data(sensorial)

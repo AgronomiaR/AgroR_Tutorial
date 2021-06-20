@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 15 Regressões |  Welcome to AgroR</title>
+  <title>Capítulo 15 Regressões | Welcome to AgroR</title>
   <meta name="description" content="AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 15 Regressões |  Welcome to AgroR" />
+  <meta property="og:title" content="Capítulo 15 Regressões | Welcome to AgroR" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 15 Regressões |  Welcome to AgroR" />
+  <meta name="twitter:title" content="Capítulo 15 Regressões | Welcome to AgroR" />
   
   <meta name="twitter:description" content="AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Gabriel Danilo Shimizu" />
 
 
-<meta name="date" content="2021-06-18" />
+<meta name="date" content="2021-06-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -305,8 +305,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p><img src="https://raw.githubusercontent.com/cran/AgroR/master/man/figures/logo.png" />
-Welcome to AgroR</p></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p>Welcome to AgroR</p></a>
           </h1>
         </div>
 
@@ -318,6 +317,7 @@ Welcome to AgroR</p></a>
 <h1><span class="header-section-number">Capítulo 15</span> Regressões</h1>
 <div id="polynomial" class="section level2" number="15.1">
 <h2><span class="header-section-number">15.1</span> polynomial</h2>
+<p>A análise de regressão polinomial até terceiro grau no caso de delineamento simples (DIC, DBC ou DQL) ou de efeito isolado do fator quantitativo no caso de arranjos fatoriais ou parcelas subdivididas podem ser realizadas ainda na própria função correspondendo, declarando o argumento quali como FALSE ao respectivo fator quantitativo. Todavia, há restrições quanto a alteração do layout gráfico nesses casos. Assim, é aconselhavel a utilização da função <code>polynomial</code>.</p>
 <div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="regressões.html#cb233-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;phao&quot;</span>)</span>
 <span id="cb233-2"><a href="regressões.html#cb233-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(phao, <span class="fu">polynomial</span>(dose,comp, <span class="at">grau =</span> <span class="dv">2</span>))</span></code></pre></div>
 <p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
@@ -334,6 +334,7 @@ Welcome to AgroR</p></a>
 </div>
 <div id="polynomial2" class="section level2" number="15.2">
 <h2><span class="header-section-number">15.2</span> polynomial2</h2>
+<p>Assim como na função <code>polynomial</code>, há também a opção de usar a função <code>polynomial2</code>, que realiza a análise de regressão polinomial até terceiro grau no caso de delineamentos conduzidos em arranjos fatoriais ou parcelas subdivididas em um dos fatores é quantitativo e outro qualitativo.</p>
 <div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="regressões.html#cb235-1" aria-hidden="true" tabindex="-1"></a>dose<span class="ot">=</span><span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">6</span>),<span class="dv">3</span>)</span>
 <span id="cb235-2"><a href="regressões.html#cb235-2" aria-hidden="true" tabindex="-1"></a>resp<span class="ot">=</span><span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">23</span>,<span class="dv">24</span>,<span class="dv">25</span>,<span class="dv">30</span>,<span class="dv">34</span>,<span class="dv">36</span>,<span class="dv">80</span>,<span class="dv">90</span>,<span class="dv">80</span>,<span class="dv">12</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">23</span>,<span class="dv">24</span>,<span class="dv">25</span>,<span class="dv">50</span>,<span class="dv">54</span>,<span class="dv">56</span>,<span class="dv">80</span>,<span class="dv">90</span>,<span class="dv">40</span>,</span>
 <span id="cb235-3"><a href="regressões.html#cb235-3" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">50</span>,<span class="dv">54</span>,<span class="dv">56</span>,<span class="dv">80</span>,<span class="dv">90</span>,<span class="dv">40</span>)</span>
@@ -364,6 +365,7 @@ Welcome to AgroR</p></a>
 </div>
 <div id="polynomial2_color" class="section level2" number="15.3">
 <h2><span class="header-section-number">15.3</span> polynomial2_color</h2>
+<p>A função polynomial2_color realiza a mesma análise da função <code>polynomial2</code>, contudo, a saída gráfica apresenta diferenciação do fator qualitativo por coloração.</p>
 <div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="regressões.html#cb237-1" aria-hidden="true" tabindex="-1"></a><span class="fu">polynomial2_color</span>(dose, resp, trat, <span class="at">grau=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span></code></pre></div>
 <pre><code>## 
 ## ----------------------------------------------------

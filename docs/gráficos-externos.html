@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 17 Gráficos externos |  Welcome to AgroR</title>
+  <title>Capítulo 17 Gráficos externos | Welcome to AgroR</title>
   <meta name="description" content="AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 17 Gráficos externos |  Welcome to AgroR" />
+  <meta property="og:title" content="Capítulo 17 Gráficos externos | Welcome to AgroR" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 17 Gráficos externos |  Welcome to AgroR" />
+  <meta name="twitter:title" content="Capítulo 17 Gráficos externos | Welcome to AgroR" />
   
   <meta name="twitter:description" content="AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Gabriel Danilo Shimizu" />
 
 
-<meta name="date" content="2021-06-18" />
+<meta name="date" content="2021-06-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -305,8 +305,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p><img src="https://raw.githubusercontent.com/cran/AgroR/master/man/figures/logo.png" />
-Welcome to AgroR</p></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p>Welcome to AgroR</p></a>
           </h1>
         </div>
 
@@ -316,15 +315,19 @@ Welcome to AgroR</p></a>
             <section class="normal" id="section-">
 <div id="gráficos-externos" class="section level1" number="17">
 <h1><span class="header-section-number">Capítulo 17</span> Gráficos externos</h1>
+<p>O AgroR também permite alterar os tipos gráficos dos resultados. Essas extensões do pacote tem a finalidade de fornecer opções ao usuário para representação dos resultados de forma gráfica a fim de facilitar o entendimento pelo usuário, bem como aos futuros leitores.</p>
 <div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="gráficos-externos.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(pomegranate)</span>
 <span id="cb248-2"><a href="gráficos-externos.html#cb248-2" aria-hidden="true" tabindex="-1"></a>graph<span class="ot">=</span><span class="fu">with</span>(pomegranate,<span class="fu">DIC</span>(trat,WL,<span class="at">mcomp =</span> <span class="st">&quot;sk&quot;</span>))</span></code></pre></div>
 <div id="barplot_positive" class="section level2" number="17.1">
 <h2><span class="header-section-number">17.1</span> barplot_positive</h2>
+<p>Essa função gráfica foi construída para representar um gráfico de colunas com dois lados positivos. Na ciências agrárias, sobretudo na agronomia, é comum realizar avaliações de parâmetros de parte aérea e raiz de uma planta, assim, como forma de simbolizar o mesmo, podemos representar dessa forma.</p>
+<p>Obs. Esse tipo de gráfico não é limitado apenas a situação mencionada acima.</p>
 <div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="gráficos-externos.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot_positive</span>(graph,graph)</span></code></pre></div>
 <p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
 </div>
 <div id="bar_graph" class="section level2" number="17.2">
 <h2><span class="header-section-number">17.2</span> bar_graph</h2>
+<p>A função <code>bar_graph</code> é similar ao argumento geom=“bar” das funções de análise.</p>
 <div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="gráficos-externos.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bar_graph</span>(graph)</span></code></pre></div>
 <p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
 <div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="gráficos-externos.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bar_graph</span>(graph,<span class="at">horiz =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
@@ -332,6 +335,7 @@ Welcome to AgroR</p></a>
 </div>
 <div id="seg_graph" class="section level2" number="17.3">
 <h2><span class="header-section-number">17.3</span> seg_graph</h2>
+<p>A função <code>seg_graph</code> é similar ao argumento geom=“point” das funções de análise.</p>
 <div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="gráficos-externos.html#cb252-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seg_graph</span>(graph)</span></code></pre></div>
 <p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
 <div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="gráficos-externos.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seg_graph</span>(graph,<span class="at">horiz =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
@@ -339,19 +343,25 @@ Welcome to AgroR</p></a>
 </div>
 <div id="plot_jitter" class="section level2" number="17.4">
 <h2><span class="header-section-number">17.4</span> plot_jitter</h2>
+<p>A função <code>plot_jitter</code> adiciona as observações em um gráfico de colunas importado das funções de análise.</p>
 <div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="gráficos-externos.html#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_jitter</span>(graph)</span></code></pre></div>
 <p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
 </div>
 <div id="sk_graph" class="section level2" number="17.5">
 <h2><span class="header-section-number">17.5</span> sk_graph</h2>
+<p>A função <code>sk_graph</code> realiza um gráfico de colunas com as cores separadas por grupo, conforme teste de Scott-Knott.</p>
+<p>Obs. Essa função somente é válida para teste de Scott-Knott.</p>
 <div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="gráficos-externos.html#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sk_graph</span>(graph)</span></code></pre></div>
 <p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
 </div>
 <div id="radargraph" class="section level2" number="17.6">
 <h2><span class="header-section-number">17.6</span> radargraph</h2>
+<p>A função <code>radargraph</code> realiza um gráfico de colunas circulares com as cores separadas por grupo, conforme teste de Scott-Knott.</p>
+<p>Obs. Essa função somente é válida para teste de Scott-Knott.</p>
 <div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="gráficos-externos.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="fu">radargraph</span>(graph)</span></code></pre></div>
 <p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-55-1.png" width="672" />
 ## plot_interaction</p>
+<p>A função <code>plot_interaction</code> realiza o gráfico de interação a partir dos resultados de uma análise em que houve interação dupla significativa.</p>
 <div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="gráficos-externos.html#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(cloro)</span>
 <span id="cb257-2"><a href="gráficos-externos.html#cb257-2" aria-hidden="true" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">with</span>(cloro, <span class="fu">FAT2DIC</span>(f1, f2, resp))</span></code></pre></div>
 <div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="gráficos-externos.html#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_interaction</span>(a)</span></code></pre></div>
