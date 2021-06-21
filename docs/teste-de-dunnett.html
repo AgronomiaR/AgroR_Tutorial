@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 16 Teste de Dunnett | Welcome to AgroR</title>
+  <title> 16 Teste de Dunnett | Welcome to AgroR</title>
   <meta name="description" content="AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 16 Teste de Dunnett | Welcome to AgroR" />
+  <meta property="og:title" content=" 16 Teste de Dunnett | Welcome to AgroR" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 16 Teste de Dunnett | Welcome to AgroR" />
+  <meta name="twitter:title" content=" 16 Teste de Dunnett | Welcome to AgroR" />
   
   <meta name="twitter:description" content="AgroR: Experimental Statistics and Graphics for Agricultural Sciences" />
   
@@ -314,18 +314,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="teste-de-dunnett" class="section level1" number="16">
-<h1><span class="header-section-number">Capítulo 16</span> Teste de Dunnett</h1>
+<h1><span class="header-section-number"> 16</span> Teste de Dunnett</h1>
 <p>O teste de Dunnett serve para comparações múltiplas em que apenas um tratamento serve de referência, ou seja, deseja-se apenas comparar todos com apenas um. Por exemplo, o tratamento padrão (pode ser chamado de controle, testemunha…) não havendo interesse na comparação dos demais tratamentos entre si. Nas ciências agrárias, tal teste tem sido utilizado em experimentos fatoriais com testemunha adicional. Nesse capítulo, apresentamos um exemplo de teste de dunnet para experimentos simples e para um experimento em esquema fatorial com uma testemunha adicional.</p>
 <div id="dic-1" class="section level2" number="16.1">
 <h2><span class="header-section-number">16.1</span> DIC</h2>
 <div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="teste-de-dunnett.html#cb239-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;pomegranate&quot;</span>)</span>
 <span id="cb239-2"><a href="teste-de-dunnett.html#cb239-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(pomegranate,<span class="fu">dunnett</span>(<span class="at">trat=</span>trat,<span class="at">resp=</span>WL,<span class="at">control=</span><span class="st">&quot;T1&quot;</span>))</span></code></pre></div>
 <pre><code>##           Estimate     IC-lwr    IC-upr t value p-value sig
-## T1  -  T2  -0.1650 -0.6434438 0.3134438 -0.9528  0.8035  ns
-## T1  -  T3   0.7750  0.2965562 1.2534438  4.4753  0.0012  **
-## T1  -  T4   0.7775  0.2990562 1.2559438  4.4898  0.0013  **
-## T1  -  T5   0.7950  0.3165562 1.2734438  4.5908  0.0009  **
-## T1  -  T6   0.3200 -0.1584438 0.7984438  1.8479  0.2667  ns</code></pre>
+## T1  -  T2  -0.1650 -0.6429545 0.3129545 -0.9528  0.8034  ns
+## T1  -  T3   0.7750  0.2970455 1.2529545  4.4753  0.0014  **
+## T1  -  T4   0.7775  0.2995455 1.2554545  4.4898  0.0012  **
+## T1  -  T5   0.7950  0.3170455 1.2729545  4.5908  0.0009  **
+## T1  -  T6   0.3200 -0.1579545 0.7979545  1.8479  0.2667  ns</code></pre>
 <p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
 </div>
 <div id="esquema-fatorial" class="section level2" number="16.2">
@@ -353,14 +353,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb246-7"><a href="teste-de-dunnett.html#cb246-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">control =</span> <span class="st">&quot;Test&quot;</span>,</span>
 <span id="cb246-8"><a href="teste-de-dunnett.html#cb246-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">block=</span>bloco,<span class="at">model =</span> <span class="st">&quot;DBC&quot;</span>))</span></code></pre></div>
 <pre><code>##                    Estimate     IC-lwr     IC-upr t value p-value sig
-## Test  -  INPlantio    -34.2 -148.85325   80.45325 -0.8376  0.9479  ns
-## Test  -  INV1+15     -166.6 -281.25325  -51.94675 -4.0802  0.0020  **
-## Test  -  INV3+15       -3.0 -117.65325  111.65325 -0.0735  1.0000  ns
-## Test  -  INR1+15      -70.4 -185.05325   44.25325 -1.7242  0.4041  ns
-## Test  -  NIPlantio   -136.4 -251.05325  -21.74675 -3.3405  0.0137   *
-## Test  -  NIV1+15      155.2   40.54675  269.85325  3.8010  0.0042  **
-## Test  -  NIV3+15     -215.0 -329.65325 -100.34675 -5.2655  0.0001  **
-## Test  -  NIR1+15     -238.8 -353.45325 -124.14675 -5.8484  0.0000  **</code></pre>
+## Test  -  INPlantio    -34.2 -148.73602   80.33602 -0.8376  0.9479  ns
+## Test  -  INV1+15     -166.6 -281.13602  -52.06398 -4.0802  0.0021  **
+## Test  -  INV3+15       -3.0 -117.53602  111.53602 -0.0735  1.0000  ns
+## Test  -  INR1+15      -70.4 -184.93602   44.13602 -1.7242  0.4039  ns
+## Test  -  NIPlantio   -136.4 -250.93602  -21.86398 -3.3405  0.0138   *
+## Test  -  NIV1+15      155.2   40.66398  269.73602  3.8010  0.0041  **
+## Test  -  NIV3+15     -215.0 -329.53602 -100.46398 -5.2655  0.0001  **
+## Test  -  NIR1+15     -238.8 -353.33602 -124.26398 -5.8484  0.0000  **</code></pre>
 <p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
 </div>
 </div>
