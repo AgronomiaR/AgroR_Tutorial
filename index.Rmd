@@ -2,7 +2,10 @@
 title: |
   Welcome to AgroR
 subtitle: "Experimental Statistics and Graphics for Agricultural Sciences"
-author: "Gabriel Danilo Shimizu"
+author: |
+  Gabriel Danilo Shimizu (Maintainer); 
+  Rodrigo Yudi Palhaci Marubayashi; 
+  Leandro Simões Azeredo Gonçalves 
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -35,7 +38,7 @@ Published: 2021-06-14
 
 Author:	Gabriel Danilo Shimizu ORCID iD [aut, cre], Rodrigo Yudi Palhaci Marubayashi ORCID iD [aut, ctb], Leandro Simoes Azeredo Goncalves ORCID iD [aut, ctb]
 
-Maintainer: Gabriel Danilo Shimizu <shimizu at uel.br>
+Maintainer: Gabriel Danilo Shimizu <shimizu@uel.br>
 
 License: GPL-2 | GPL-3 [expanded from: GPL (≥ 2)]
 
