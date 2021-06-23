@@ -23,7 +23,7 @@
 
 
 
-<meta name="date" content="2021-06-21" />
+<meta name="date" content="2021-06-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
 <link rel="prev" href="regressões.html"/>
 <link rel="next" href="gráficos-externos.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -319,12 +319,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">16.1</span> DIC</h2>
 <div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="teste-de-dunnett.html#cb239-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;pomegranate&quot;</span>)</span>
 <span id="cb239-2"><a href="teste-de-dunnett.html#cb239-2" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(pomegranate,<span class="fu">dunnett</span>(<span class="at">trat=</span>trat,<span class="at">resp=</span>WL,<span class="at">control=</span><span class="st">&quot;T1&quot;</span>))</span></code></pre></div>
-<pre><code>##           Estimate     IC-lwr    IC-upr t value p-value sig
-## T1  -  T2  -0.1650 -0.6429995 0.3129995 -0.9528  0.8035  ns
-## T1  -  T3   0.7750  0.2970005 1.2529995  4.4753  0.0012  **
-## T1  -  T4   0.7775  0.2995005 1.2554995  4.4898  0.0012  **
-## T1  -  T5   0.7950  0.3170005 1.2729995  4.5908  0.0011  **
-## T1  -  T6   0.3200 -0.1579995 0.7979995  1.8479  0.2668  ns</code></pre>
+<pre><code>##           Estimate   IC-lwr  IC-upr t value p-value sig
+## T1  -  T2  -0.1650 -0.64351 0.31351 -0.9528  0.8035  ns
+## T1  -  T3   0.7750  0.29649 1.25351  4.4753  0.0013  **
+## T1  -  T4   0.7775  0.29899 1.25601  4.4898  0.0013  **
+## T1  -  T5   0.7950  0.31649 1.27351  4.5908  0.0011  **
+## T1  -  T6   0.3200 -0.15851 0.79851  1.8479  0.2667  ns</code></pre>
 <p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
 </div>
 <div id="esquema-fatorial" class="section level2" number="16.2">
@@ -352,14 +352,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb246-7"><a href="teste-de-dunnett.html#cb246-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">control =</span> <span class="st">&quot;Test&quot;</span>,</span>
 <span id="cb246-8"><a href="teste-de-dunnett.html#cb246-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">block=</span>bloco,<span class="at">model =</span> <span class="st">&quot;DBC&quot;</span>))</span></code></pre></div>
 <pre><code>##                    Estimate     IC-lwr     IC-upr t value p-value sig
-## Test  -  INPlantio    -34.2 -148.70127   80.30127 -0.8376  0.9479  ns
-## Test  -  INV1+15     -166.6 -281.10127  -52.09873 -4.0802  0.0019  **
-## Test  -  INV3+15       -3.0 -117.50127  111.50127 -0.0735  1.0000  ns
-## Test  -  INR1+15      -70.4 -184.90127   44.10127 -1.7242  0.4041  ns
-## Test  -  NIPlantio   -136.4 -250.90127  -21.89873 -3.3405  0.0137   *
-## Test  -  NIV1+15      155.2   40.69873  269.70127  3.8010  0.0042  **
-## Test  -  NIV3+15     -215.0 -329.50127 -100.49873 -5.2655  0.0001  **
-## Test  -  NIR1+15     -238.8 -353.30127 -124.29873 -5.8484  0.0000  **</code></pre>
+## Test  -  INPlantio    -34.2 -148.76205   80.36205 -0.8376  0.9479  ns
+## Test  -  INV1+15     -166.6 -281.16205  -52.03795 -4.0802  0.0020  **
+## Test  -  INV3+15       -3.0 -117.56205  111.56205 -0.0735  1.0000  ns
+## Test  -  INR1+15      -70.4 -184.96205   44.16205 -1.7242  0.4039  ns
+## Test  -  NIPlantio   -136.4 -250.96205  -21.83795 -3.3405  0.0138   *
+## Test  -  NIV1+15      155.2   40.63795  269.76205  3.8010  0.0043  **
+## Test  -  NIV3+15     -215.0 -329.56205 -100.43795 -5.2655  0.0001  **
+## Test  -  NIR1+15     -238.8 -353.36205 -124.23795 -5.8484  0.0000  **</code></pre>
 <p><img src="AgroR_Tutorial_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
 </div>
 </div>

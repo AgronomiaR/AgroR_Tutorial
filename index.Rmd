@@ -3,7 +3,7 @@ title: |
   Welcome to AgroR
 subtitle: "Experimental Statistics and Graphics for Agricultural Sciences"
 author: |
-  Gabriel Danilo Shimizu (Maintainer); 
+  [Gabriel Danilo Shimizu (Maintainer)](https://agronomiar.github.io/gabriel_shimizu/index.html); 
   Rodrigo Yudi Palhaci Marubayashi; 
   Leandro Simões Azeredo Gonçalves 
 date: "`r Sys.Date()`"
